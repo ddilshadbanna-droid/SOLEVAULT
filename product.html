@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Product | SOLEVault</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+}
+
+/* NAVBAR */
+nav{
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    font-weight:400;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+nav a:hover{
+    color:#888;
+}
+
+.icons{
+    display:flex;
+    gap:18px;
+    font-size:18px;
+}
+
+/* PRODUCT */
+.product-page{
+    min-height:calc(100vh - 75px);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    padding:70px 7%;
+    align-items:center;
+}
+
+/* IMAGE */
+.product-visual{
+    animation:slideLeft 1s ease;
+}
+
+.product-visual img{
+    width:100%;
+    max-height:600px;
+    object-fit:cover;
+    background:#eee;
+    transition:transform .5s ease;
+}
+
+.product-visual img:hover{
+    transform:scale(1.03);
+}
+
+/* DETAILS */
+.product-details{
+    animation:slideRight 1s ease;
+}
+
+.brand{
+    color:#777;
+    letter-spacing:4px;
+    font-size:12px;
+    margin-bottom:15px;
+}
+
+.product-details h1{
+    font-size:52px;
+    line-height:1;
+    margin-bottom:20px;
+}
+
+.price{
+    font-size:25px;
+    margin-bottom:25px;
+}
+
+.rating{
+    color:#ddd;
+    margin-bottom:30px;
+}
+
+.description{
+    color:#999;
+    line-height:1.7;
+    max-width:500px;
+    margin-bottom:30px;
+}
+
+/* SIZE */
+.label{
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:12px;
+    display:block;
+}
+
+.sizes{
+    display:flex;
+    gap:10px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.sizes button{
+    width:55px;
+    height:45px;
+    background:transparent;
+    color:white;
+    border:1px solid #333;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.sizes button:hover,
+.sizes button.selected{
+    background:white;
+    color:black;
+}
+
+/* BUTTONS */
+.actions{
+    display:flex;
+    gap:12px;
+}
+
+.cart-btn,
+.buy-btn{
+    padding:16px 28px;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.cart-btn{
+    background:white;
+    color:black;
+    flex:1;
+}
+
+.buy-btn{
+    background:#222;
+    color:white;
+    flex:1;
+}
+
+.cart-btn:hover{
+    background:#ccc;
+    transform:translateY(-3px);
+}
+
+.buy-btn:hover{
+    background:#333;
+    transform:translateY(-3px);
+}
+
+/* INFO */
+.info{
+    margin-top:35px;
+    border-top:1px solid #222;
+}
+
+.info div{
+    padding:15px 0;
+    border-bottom:1px solid #222;
+    color:#aaa;
+    font-size:13px;
+}
+
+/* ANIMATIONS */
+@keyframes slideLeft{
+    from{
+        opacity:0;
+        transform:translateX(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes slideRight{
+    from{
+        opacity:0;
+        transform:translateX(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    nav ul{
+        display:none;
+    }
+
+    .product-page{
+        grid-template-columns:1fr;
+        gap:40px;
+        padding:40px 6%;
+    }
+
+    .product-details h1{
+        font-size:40px;
+    }
+
+    .actions{
+        flex-direction:column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+
+    <div class="logo">
+        SOLE<span>Vault</span>
+    </div>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="#">Brands</a></li>
+        <li><a href="#">New Drops</a></li>
+        <li><a href="#">Best Sellers</a></li>
+    </ul>
+
+    <div class="icons">
+        🔍 ♡ 🛒
+    </div>
+
+</nav>
+
+
+<!-- PRODUCT -->
+<section class="product-page">
+
+    <!-- IMAGE -->
+    <div class="product-visual">
+
+        <img
+        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=90"
+        alt="Nike Air Max">
+
+    </div>
+
+
+    <!-- DETAILS -->
+    <div class="product-details">
+
+        <div class="brand">NIKE</div>
+
+        <h1>Air Max Street</h1>
+
+        <div class="price">₹12,999</div>
+
+        <div class="rating">
+            ★★★★★ &nbsp; 4.8 (126 Reviews)
+        </div>
+
+        <p class="description">
+            A premium everyday sneaker designed for comfort,
+            performance and street style. Built for those who
+            want to stand out without compromising comfort.
+        </p>
+
+
+        <!-- SIZE -->
+        <span class="label">SELECT SIZE</span>
+
+        <div class="sizes">
+
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>10</button>
+            <button>11</button>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+        <div class="actions">
+
+            <button class="cart-btn" id="cartBtn">
+                ADD TO CART
+            </button>
+
+            <button class="buy-btn">
+                BUY NOW
+            </button>
+
+        </div>
+
+
+        <!-- INFO -->
+        <div class="info">
+
+            <div>🚚 Free shipping on orders above ₹2,000</div>
+
+            <div>↩ Easy 7-day returns</div>
+
+            <div>✓ 100% authentic products</div>
+
+            <div>🔒 Secure checkout</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* SIZE SELECTION */
+
+const sizeButtons = document.querySelectorAll(".sizes button");
+
+sizeButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        sizeButtons.forEach(btn => {
+            btn.classList.remove("selected");
+        });
+
+        button.classList.add("selected");
+
+    });
+
+});
+
+
+/* CART ANIMATION */
+
+const cartBtn = document.getElementById("cartBtn");
+
+cartBtn.addEventListener("click", () => {
+
+    cartBtn.innerText = "✓ ADDED TO CART";
+
+    cartBtn.style.background = "#222";
+    cartBtn.style.color = "white";
+
+    setTimeout(() => {
+
+        cartBtn.innerText = "ADD TO CART";
+
+        cartBtn.style.background = "white";
+        cartBtn.style.color = "black";
+
+    },1500);
+
+});
+
+</script>
+
+</body>
+</html>

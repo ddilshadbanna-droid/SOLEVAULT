@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout | SOLEVault</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+}
+
+nav{
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    font-weight:400;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:13px;
+}
+
+.header{
+    text-align:center;
+    padding:55px 7% 35px;
+}
+
+.header p{
+    color:#777;
+    font-size:12px;
+    letter-spacing:4px;
+    margin-bottom:15px;
+}
+
+.header h1{
+    font-size:52px;
+}
+
+.checkout-container{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:45px;
+    padding:30px 7% 80px;
+}
+
+.form-box,
+.summary{
+    background:#111;
+    padding:30px;
+}
+
+.form-box h2,
+.summary h2{
+    margin-bottom:25px;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.field{
+    margin-bottom:18px;
+}
+
+.field label{
+    display:block;
+    font-size:12px;
+    color:#aaa;
+    margin-bottom:8px;
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+    padding:14px;
+    background:#050505;
+    color:white;
+    border:1px solid #333;
+    outline:none;
+}
+
+.field textarea{
+    height:100px;
+    resize:none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+    border-color:white;
+}
+
+.order-item{
+    display:flex;
+    gap:15px;
+    padding-bottom:20px;
+    border-bottom:1px solid #222;
+}
+
+.order-item img{
+    width:85px;
+    height:85px;
+    object-fit:cover;
+}
+
+.order-item h3{
+    font-size:15px;
+    margin-bottom:8px;
+}
+
+.order-item p{
+    color:#777;
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.price-row{
+    display:flex;
+    justify-content:space-between;
+    padding:14px 0;
+    color:#aaa;
+    border-bottom:1px solid #222;
+}
+
+.total{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    border:0;
+}
+
+.payment-btn{
+    width:100%;
+    padding:17px;
+    background:white;
+    color:black;
+    border:0;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+.payment-btn:hover{
+    background:#ccc;
+}
+
+.secure{
+    text-align:center;
+    color:#666;
+    font-size:11px;
+    margin-top:20px;
+}
+
+@media(max-width:800px){
+
+    .checkout-container{
+        grid-template-columns:1fr;
+    }
+
+    .row{
+        grid-template-columns:1fr;
+    }
+
+    .header h1{
+        font-size:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        SOLE<span>Vault</span>
+    </div>
+
+    <a href="cart.html">← Back to Cart</a>
+
+</nav>
+
+<section class="header">
+
+    <p>SECURE CHECKOUT</p>
+
+    <h1>CHECKOUT</h1>
+
+</section>
+
+<section class="checkout-container">
+
+    <div class="form-box">
+
+        <h2>DELIVERY DETAILS</h2>
+
+        <div class="row">
+
+            <div class="field">
+                <label>FIRST NAME</label>
+                <input type="text" id="firstName" placeholder="First name">
+            </div>
+
+            <div class="field">
+                <label>LAST NAME</label>
+                <input type="text" id="lastName" placeholder="Last name">
+            </div>
+
+        </div>
+
+        <div class="field">
+            <label>EMAIL ADDRESS</label>
+            <input type="email" id="email" placeholder="you@example.com">
+        </div>
+
+        <div class="field">
+            <label>PHONE NUMBER</label>
+            <input type="tel" id="phone" placeholder="10 digit mobile number" maxlength="10">
+        </div>
+
+        <div class="field">
+            <label>ADDRESS</label>
+            <textarea id="address" placeholder="House / Flat / Street / Area"></textarea>
+        </div>
+
+        <div class="row">
+
+            <div class="field">
+                <label>CITY</label>
+                <input type="text" id="city" placeholder="City">
+            </div>
+
+            <div class="field">
+                <label>PIN CODE</label>
+                <input type="text" id="pincode" placeholder="6 digit PIN" maxlength="6">
+            </div>
+
+        </div>
+
+        <div class="field">
+
+            <label>STATE</label>
+
+            <select id="state">
+
+                <option value="">Select State</option>
+                <option>Kerala</option>
+                <option>Tamil Nadu</option>
+                <option>Karnataka</option>
+                <option>Maharashtra</option>
+                <option>Delhi</option>
+                <option>Telangana</option>
+                <option>Andhra Pradesh</option>
+                <option>Other</option>
+
+            </select>
+
+        </div>
+
+        <div class="field">
+
+            <label>DELIVERY METHOD</label>
+
+            <select id="deliveryMethod">
+
+                <option value="0">Standard Delivery — FREE</option>
+                <option value="149">Express Delivery — ₹149</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <div class="summary">
+
+        <h2>YOUR ORDER</h2>
+
+        <div class="order-item">
+
+            <img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80"
+            alt="Air Max Street">
+
+            <div>
+
+                <h3>Air Max Street</h3>
+
+                <p>Brand: Nike</p>
+
+                <p>Size: 9 × <span id="quantity">1</span></p>
+
+                <p>₹12,999 each</p>
+
+            </div>
+
+        </div>
+
+        <div class="price-row">
+
+            <span>Subtotal</span>
+            <span id="subtotal">₹12,999</span>
+
+        </div>
+
+        <div class="price-row">
+
+            <span>Delivery</span>
+            <span id="deliveryPrice">FREE</span>
+
+        </div>
+
+        <div class="price-row total">
+
+            <span>Total</span>
+            <span id="totalPrice">₹12,999</span>
+
+        </div>
+
+        <button
+        class="payment-btn"
+        onclick="continuePayment()">
+
+            CONTINUE TO PAYMENT →
+
+        </button>
+
+        <div class="secure">
+            🔒 Your information is securely protected
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+const price = 12999;
+
+let quantity =
+    Number(localStorage.getItem("solevaultQuantity")) || 1;
+
+document.getElementById("quantity").textContent =
+    quantity;
+
+
+function updateTotal(){
+
+    const delivery =
+        Number(document.getElementById("deliveryMethod").value);
+
+    const subtotal =
+        price * quantity;
+
+    const total =
+        subtotal + delivery;
+
+    document.getElementById("subtotal").textContent =
+        "₹" + subtotal.toLocaleString("en-IN");
+
+    document.getElementById("deliveryPrice").textContent =
+        delivery === 0
+        ? "FREE"
+        : "₹" + delivery.toLocaleString("en-IN");
+
+    document.getElementById("totalPrice").textContent =
+        "₹" + total.toLocaleString("en-IN");
+
+    localStorage.setItem(
+        "solevaultOrderAmount",
+        total
+    );
+}
+
+
+document
+.getElementById("deliveryMethod")
+.addEventListener("change", updateTotal);
+
+
+function continuePayment(){
+
+    const firstName =
+        document.getElementById("firstName").value.trim();
+
+    const lastName =
+        document.getElementById("lastName").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const address =
+        document.getElementById("address").value.trim();
+
+    const city =
+        document.getElementById("city").value.trim();
+
+    const pincode =
+        document.getElementById("pincode").value.trim();
+
+    const state =
+        document.getElementById("state").value;
+
+
+    if(
+        !firstName ||
+        !lastName ||
+        !email ||
+        !phone ||
+        !address ||
+        !city ||
+        !pincode ||
+        !state
+    ){
+
+        alert("Please fill in all delivery details.");
+        return;
+
+    }
+
+
+    if(!/^\d{10}$/.test(phone)){
+
+        alert("Please enter a valid 10-digit phone number.");
+        return;
+
+    }
+
+
+    if(!/^\d{6}$/.test(pincode)){
+
+        alert("Please enter a valid 6-digit PIN code.");
+        return;
+
+    }
+
+
+    const delivery =
+        Number(document.getElementById("deliveryMethod").value);
+
+    const total =
+        (price * quantity) + delivery;
+
+
+    const customerDetails = {
+
+        firstName:firstName,
+        lastName:lastName,
+        email:email,
+        phone:phone,
+
+        address:address,
+        city:city,
+        pincode:pincode,
+        state:state,
+
+        quantity:quantity,
+        amount:total
+
+    };
+
+
+    localStorage.setItem(
+        "solevaultCustomer",
+        JSON.stringify(customerDetails)
+    );
+
+    localStorage.setItem(
+        "solevaultOrderAmount",
+        total
+    );
+
+
+    window.location.href = "payment.html";
+
+}
+
+
+updateTotal();
+
+</script>
+
+</body>
+</html>

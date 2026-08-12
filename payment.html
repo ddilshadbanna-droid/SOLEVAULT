@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment | SOLEVault</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+}
+
+nav{
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    font-weight:400;
+}
+
+.back{
+    color:#aaa;
+    text-decoration:none;
+    font-size:13px;
+}
+
+.back:hover{
+    color:white;
+}
+
+.header{
+    text-align:center;
+    padding:55px 7% 35px;
+    animation:fadeDown .8s ease;
+}
+
+.header p{
+    color:#777;
+    font-size:12px;
+    letter-spacing:4px;
+    margin-bottom:15px;
+}
+
+.header h1{
+    font-size:52px;
+}
+
+.payment-container{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:45px;
+    padding:30px 7% 80px;
+}
+
+.payment-box{
+    background:#111;
+    padding:30px;
+    animation:slideLeft .8s ease;
+}
+
+.payment-box h2{
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+.methods{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.method{
+    background:#050505;
+    color:white;
+    border:1px solid #333;
+    padding:16px 8px;
+    cursor:pointer;
+    text-align:center;
+    transition:.3s;
+}
+
+.method:hover,
+.method.active{
+    background:white;
+    color:black;
+}
+
+.method span{
+    display:block;
+    font-size:22px;
+    margin-bottom:7px;
+}
+
+.method small{
+    font-size:11px;
+}
+
+.upi-section{
+    display:block;
+}
+
+.upi-apps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.upi-app{
+    background:#050505;
+    color:white;
+    border:1px solid #333;
+    padding:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.upi-app:hover,
+.upi-app.selected{
+    border-color:white;
+    transform:translateY(-3px);
+}
+
+.upi-icon{
+    font-size:25px;
+    margin-bottom:7px;
+}
+
+.upi-app p{
+    font-size:12px;
+}
+
+.field{
+    margin-bottom:18px;
+}
+
+.field label{
+    display:block;
+    color:#aaa;
+    font-size:12px;
+    margin-bottom:8px;
+}
+
+.field input{
+    width:100%;
+    padding:14px;
+    background:#050505;
+    color:white;
+    border:1px solid #333;
+    outline:none;
+}
+
+.field input:focus{
+    border-color:white;
+}
+
+.card-section{
+    display:none;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.bank-section{
+    display:none;
+}
+
+.bank-section select{
+    width:100%;
+    padding:14px;
+    background:#050505;
+    color:white;
+    border:1px solid #333;
+}
+
+.pay-btn{
+    width:100%;
+    padding:17px;
+    margin-top:10px;
+    background:white;
+    color:black;
+    border:0;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.pay-btn:hover{
+    background:#ccc;
+    transform:translateY(-3px);
+}
+
+.summary{
+    background:#111;
+    padding:30px;
+    height:max-content;
+    animation:slideRight .8s ease;
+}
+
+.summary h2{
+    margin-bottom:25px;
+}
+
+.summary-row{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    color:#aaa;
+    border-bottom:1px solid #222;
+}
+
+.summary-row.total{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    border-bottom:0;
+}
+
+.order-id{
+    margin-top:20px;
+    padding:14px;
+    background:#050505;
+    border:1px solid #222;
+    text-align:center;
+}
+
+.order-id small{
+    display:block;
+    color:#777;
+    font-size:10px;
+    letter-spacing:2px;
+    margin-bottom:6px;
+}
+
+.order-id strong{
+    font-size:14px;
+}
+
+.secure{
+    color:#666;
+    font-size:11px;
+    text-align:center;
+    margin-top:20px;
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes slideLeft{
+    from{
+        opacity:0;
+        transform:translateX(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes slideRight{
+    from{
+        opacity:0;
+        transform:translateX(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@media(max-width:800px){
+
+    .payment-container{
+        grid-template-columns:1fr;
+    }
+
+    .methods{
+        grid-template-columns:1fr;
+    }
+
+    .upi-apps{
+        grid-template-columns:1fr;
+    }
+
+    .row{
+        grid-template-columns:1fr;
+    }
+
+    .header h1{
+        font-size:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        SOLE<span>Vault</span>
+    </div>
+
+    <a href="checkout.html" class="back">
+        ← Back to Checkout
+    </a>
+
+</nav>
+
+<section class="header">
+
+    <p>SECURE PAYMENT</p>
+
+    <h1>PAYMENT</h1>
+
+</section>
+
+<section class="payment-container">
+
+    <div class="payment-box">
+
+        <h2>CHOOSE PAYMENT METHOD</h2>
+
+        <div class="methods">
+
+            <button class="method active" onclick="showUPI()">
+                <span>📱</span>
+                <small>UPI</small>
+            </button>
+
+            <button class="method" onclick="showCard()">
+                <span>💳</span>
+                <small>Card</small>
+            </button>
+
+            <button class="method" onclick="showBank()">
+                <span>🏦</span>
+                <small>Net Banking</small>
+            </button>
+
+        </div>
+
+        <!-- UPI -->
+
+        <div class="upi-section" id="upi">
+
+            <h3 style="margin-bottom:18px;">
+                Select UPI App
+            </h3>
+
+            <div class="upi-apps">
+
+                <button class="upi-app" onclick="selectUPI(this)">
+                    <div class="upi-icon">🟢</div>
+                    <p>Google Pay</p>
+                </button>
+
+                <button class="upi-app" onclick="selectUPI(this)">
+                    <div class="upi-icon">🔵</div>
+                    <p>PhonePe</p>
+                </button>
+
+                <button class="upi-app" onclick="selectUPI(this)">
+                    <div class="upi-icon">🔷</div>
+                    <p>Paytm</p>
+                </button>
+
+            </div>
+
+            <div class="field">
+
+                <label>UPI ID</label>
+
+                <input
+                type="text"
+                id="upiId"
+                placeholder="example@upi">
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="card-section" id="card">
+
+            <div class="field">
+
+                <label>CARD NUMBER</label>
+
+                <input
+                type="text"
+                maxlength="19"
+                placeholder="1234 5678 9012 3456">
+
+            </div>
+
+            <div class="row">
+
+                <div class="field">
+
+                    <label>EXPIRY DATE</label>
+
+                    <input
+                    type="text"
+                    placeholder="MM / YY"
+                    maxlength="5">
+
+                </div>
+
+                <div class="field">
+
+                    <label>CVV</label>
+
+                    <input
+                    type="password"
+                    placeholder="•••"
+                    maxlength="3">
+
+                </div>
+
+            </div>
+
+            <div class="field">
+
+                <label>NAME ON CARD</label>
+
+                <input
+                type="text"
+                placeholder="Card holder name">
+
+            </div>
+
+        </div>
+
+        <!-- NET BANKING -->
+
+        <div class="bank-section" id="bank">
+
+            <div class="field">
+
+                <label>SELECT YOUR BANK</label>
+
+                <select id="bankName">
+
+                    <option value="">Select Bank</option>
+                    <option>State Bank of India</option>
+                    <option>HDFC Bank</option>
+                    <option>ICICI Bank</option>
+                    <option>Axis Bank</option>
+                    <option>Kotak Mahindra Bank</option>
+                    <option>Federal Bank</option>
+                    <option>Other Bank</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <button class="pay-btn" onclick="placeOrder()">
+            PAY <span id="payAmount">₹12,999</span> →
+        </button>
+
+    </div>
+
+    <!-- ORDER SUMMARY -->
+
+    <div class="summary">
+
+        <h2>ORDER SUMMARY</h2>
+
+        <div class="summary-row">
+
+            <span>Air Max Street</span>
+
+            <span>₹12,999</span>
+
+        </div>
+
+        <div class="summary-row">
+
+            <span>Delivery</span>
+
+            <span>FREE</span>
+
+        </div>
+
+        <div class="summary-row total">
+
+            <span>Total</span>
+
+            <span id="summaryAmount">₹12,999</span>
+
+        </div>
+
+        <div class="order-id">
+
+            <small>ORDER ID</small>
+
+            <strong id="orderId">
+                Loading...
+            </strong>
+
+        </div>
+
+        <div class="secure">
+
+            🔒 Secure & encrypted checkout
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+const methods =
+document.querySelectorAll(".method");
+
+
+function resetMethods(){
+
+    methods.forEach(method=>{
+        method.classList.remove("active");
+    });
+
+    document.getElementById("upi").style.display="none";
+
+    document.getElementById("card").style.display="none";
+
+    document.getElementById("bank").style.display="none";
+
+}
+
+
+function showUPI(){
+
+    resetMethods();
+
+    methods[0].classList.add("active");
+
+    document.getElementById("upi").style.display="block";
+
+}
+
+
+function showCard(){
+
+    resetMethods();
+
+    methods[1].classList.add("active");
+
+    document.getElementById("card").style.display="block";
+
+}
+
+
+function showBank(){
+
+    resetMethods();
+
+    methods[2].classList.add("active");
+
+    document.getElementById("bank").style.display="block";
+
+}
+
+
+function selectUPI(button){
+
+    document
+    .querySelectorAll(".upi-app")
+    .forEach(app=>{
+        app.classList.remove("selected");
+    });
+
+    button.classList.add("selected");
+
+}
+
+
+/* LOAD ORDER DETAILS */
+
+function loadOrder(){
+
+    const orderId =
+        localStorage.getItem("solevaultOrderId");
+
+    const amount =
+        localStorage.getItem("solevaultOrderAmount");
+
+
+    if(!orderId){
+
+        document.getElementById("orderId").textContent =
+            "Order not found";
+
+        return;
+
+    }
+
+
+    document.getElementById("orderId").textContent =
+        "#" + orderId;
+
+
+    if(amount){
+
+        const formattedAmount =
+            Number(amount).toLocaleString("en-IN");
+
+
+        document.getElementById("payAmount").textContent =
+            "₹" + formattedAmount;
+
+
+        document.getElementById("summaryAmount").textContent =
+            "₹" + formattedAmount;
+
+    }
+
+}
+
+
+/* PAYMENT */
+
+function placeOrder(){
+
+    const orderId =
+        localStorage.getItem("solevaultOrderId");
+
+
+    if(!orderId){
+
+        alert(
+            "Order not found. Please go back to checkout."
+        );
+
+        return;
+
+    }
+
+
+    /*
+       DEMO PAYMENT FLOW ONLY.
+
+       Real payment gateway will be connected here.
+    */
+
+
+    localStorage.setItem(
+        "solevaultPaymentStatus",
+        "Paid"
+    );
+
+
+    window.location.href =
+        "success.html";
+
+}
+
+
+loadOrder();
+
+</script>
+
+</body>
+</html>

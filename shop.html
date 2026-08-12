@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Shop | SOLEVault</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+}
+
+
+/* NAVBAR */
+
+nav{
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    font-weight:400;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+nav a:hover{
+    color:#999;
+}
+
+.icons{
+    display:flex;
+    gap:18px;
+    font-size:18px;
+    align-items:center;
+}
+
+.cart-link{
+    color:white;
+    text-decoration:none;
+}
+
+
+/* HEADER */
+
+.page-header{
+    padding:75px 7% 45px;
+    text-align:center;
+    animation:fadeDown 1s ease;
+}
+
+.page-header p{
+    color:#888;
+    letter-spacing:4px;
+    font-size:12px;
+    margin-bottom:15px;
+}
+
+.page-header h1{
+    font-size:60px;
+    letter-spacing:-3px;
+}
+
+
+/* FILTERS */
+
+.filters{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 7%;
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+}
+
+.filter-buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.filter-buttons button{
+    background:transparent;
+    color:white;
+    border:1px solid #333;
+    padding:10px 18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.filter-buttons button:hover,
+.filter-buttons button.active{
+    background:white;
+    color:black;
+}
+
+.sort select{
+    background:#111;
+    color:white;
+    border:1px solid #333;
+    padding:10px 15px;
+}
+
+
+/* PRODUCTS */
+
+.shop{
+    padding:60px 7%;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.product{
+    background:#111;
+    position:relative;
+    overflow:hidden;
+    animation:fadeUp .8s ease both;
+    transition:transform .35s ease;
+}
+
+.product:hover{
+    transform:translateY(-8px);
+}
+
+.product-image{
+    width:100%;
+    height:290px;
+    object-fit:cover;
+    transition:transform .5s ease;
+    background:#eee;
+}
+
+.product:hover .product-image{
+    transform:scale(1.07);
+}
+
+.wishlist{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:38px;
+    height:38px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    background:white;
+    font-size:17px;
+    z-index:2;
+    transition:.3s;
+}
+
+.wishlist:hover{
+    transform:scale(1.15);
+}
+
+.product-info{
+    padding:20px;
+}
+
+.brand{
+    color:#777;
+    font-size:11px;
+    letter-spacing:2px;
+    margin-bottom:8px;
+}
+
+.product-info h3{
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+.add-cart{
+    width:100%;
+    padding:13px;
+    background:white;
+    color:black;
+    border:none;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.add-cart:hover{
+    background:#ccc;
+    transform:translateY(-2px);
+}
+
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid #222;
+    padding:40px 7%;
+    margin-top:50px;
+    color:#666;
+    font-size:12px;
+    text-align:center;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes fadeDown{
+
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+    .product-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:750px){
+
+    nav ul{
+        display:none;
+    }
+
+    .filters{
+        flex-direction:column;
+        gap:20px;
+        align-items:flex-start;
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:500px){
+
+    .page-header h1{
+        font-size:42px;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        SOLE<span>Vault</span>
+    </div>
+
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="shop.html">
+                Shop
+            </a>
+        </li>
+
+        <li>
+            <a href="shop.html">
+                Brands
+            </a>
+        </li>
+
+        <li>
+            <a href="shop.html">
+                New Drops
+            </a>
+        </li>
+
+        <li>
+            <a href="shop.html">
+                Best Sellers
+            </a>
+        </li>
+
+    </ul>
+
+
+    <div class="icons">
+
+        <span>🔍</span>
+
+        <span>♡</span>
+
+        <a
+            href="cart.html"
+            class="cart-link">
+
+            🛒
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- HEADER -->
+
+<section class="page-header">
+
+    <p>
+        EXPLORE THE COLLECTION
+    </p>
+
+    <h1>
+        ALL SNEAKERS
+    </h1>
+
+</section>
+
+
+
+<!-- FILTERS -->
+
+<section class="filters">
+
+    <div class="filter-buttons">
+
+        <button
+            class="active"
+            onclick="filterProducts('ALL',this)">
+
+            ALL
+
+        </button>
+
+        <button
+            onclick="filterProducts('NIKE',this)">
+
+            NIKE
+
+        </button>
+
+        <button
+            onclick="filterProducts('ADIDAS',this)">
+
+            ADIDAS
+
+        </button>
+
+        <button
+            onclick="filterProducts('PUMA',this)">
+
+            PUMA
+
+        </button>
+
+        <button
+            onclick="filterProducts('NEW BALANCE',this)">
+
+            NEW BALANCE
+
+        </button>
+
+        <button
+            onclick="filterProducts('ASICS',this)">
+
+            ASICS
+
+        </button>
+
+    </div>
+
+
+    <div class="sort">
+
+        <select onchange="sortProducts(this.value)">
+
+            <option value="featured">
+                Sort: Featured
+            </option>
+
+            <option value="low">
+                Price: Low to High
+            </option>
+
+            <option value="high">
+                Price: High to Low
+            </option>
+
+        </select>
+
+    </div>
+
+</section>
+
+
+
+<!-- PRODUCT SECTION -->
+
+<section class="shop">
+
+    <div class="product-grid" id="productGrid">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div
+            class="product"
+            data-brand="NIKE"
+            data-price="12999">
+
+            <button class="wishlist">
+                ♡
+            </button>
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
+                alt="Nike Sneaker">
+
+            <div class="product-info">
+
+                <div class="brand">
+                    NIKE
+                </div>
+
+                <h3>
+                    Air Max Street
+                </h3>
+
+                <div class="price">
+                    ₹12,999
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Air Max Street',
+                        'NIKE',
+                        12999,
+                        'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80'
+                    )">
+
+                    ADD TO CART
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 2 -->
+
+        <div
+            class="product"
+            data-brand="NIKE"
+            data-price="14999">
+
+            <button class="wishlist">
+                ♡
+            </button>
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80"
+                alt="Jordan Sneaker">
+
+            <div class="product-info">
+
+                <div class="brand">
+                    NIKE
+                </div>
+
+                <h3>
+                    Air Jordan Retro
+                </h3>
+
+                <div class="price">
+                    ₹14,999
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Air Jordan Retro',
+                        'NIKE',
+                        14999,
+                        'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80'
+                    )">
+
+                    ADD TO CART
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 3 -->
+
+        <div
+            class="product"
+            data-brand="ADIDAS"
+            data-price="8999">
+
+            <button class="wishlist">
+                ♡
+            </button>
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=700&q=80"
+                alt="Adidas Sneaker">
+
+            <div class="product-info">
+
+                <div class="brand">
+                    ADIDAS
+                </div>
+
+                <h3>
+                    Campus 00s
+                </h3>
+
+                <div class="price">
+                    ₹8,999
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Campus 00s',
+                        'ADIDAS',
+                        8999,
+                        'https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=700&q=80'
+                    )">
+
+                    ADD TO CART
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 4 -->
+
+        <div
+            class="product"
+            data-brand="NEW BALANCE"
+            data-price="9499">
+
+            <button class="wishlist">
+                ♡
+            </button>
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80"
+                alt="New Balance Sneaker">
+
+            <div class="product-info">
+
+                <div class="brand">
+                    NEW BALANCE
+                </div>
+
+                <h3>
+                    550 Classic
+                </h3>
+
+                <div class="price">
+                    ₹9,499
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart(
+                        '550 Classic',
+                        'NEW BALANCE',
+                        9499,
+                        'https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80'
+                    )">
+
+                    ADD TO CART
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 5 -->
+
+        <div
+            class="product"
+            data-brand="PUMA"
+            data-price="10499">
+
+            <button class="wishlist">
+                ♡
+            </button>
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=700&q=80"
+                alt="Puma Sneaker">
+
+            <div class="product-info">
+
+                <div class="brand">
+                    PUMA
+                </div>
+
+                <h3>
+                    RS-X Premium
+                </h3>
+
+                <div class="price">
+                    ₹10,499
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart(
+                        'RS-X Premium',
+                        'PUMA',
+                        10499,
+                        'https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=700&q=80'
+                    )">
+
+                    ADD TO CART
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 6 -->
+
+        <div
+            class="product"
+            data-brand="CONVERSE"
+            data-price="7499">
+
+            <button class="wishlist">
+                ♡
+            </button>
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=700&q=80"
+                alt="Converse Sneaker">
+
+            <div class="product-info">
+
+                <div class="brand">
+                    CONVERSE
+                </div>
+
+                <h3>
+                    Chuck 70
+                </h3>
+
+                <div class="price">
+                    ₹7,499
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Chuck 70',
+                        'CONVERSE',
+                        7499,
+                        'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=700&q=80'
+                    )">
+
+                    ADD TO CART
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 7 -->
+
+        <div
+            class="product"
+            data-brand="ASICS"
+            data-price="11999">
+
+            <button class="wishlist">
+                ♡
+            </button>
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=700&q=80"
+                alt="ASICS Sneaker">
+
+            <div class="product-info">
+
+                <div class="brand">
+                    ASICS
+                </div>
+
+                <h3>
+                    Gel-Kayano
+                </h3>
+
+                <div class="price">
+                    ₹11,999
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Gel-Kayano',
+                        'ASICS',
+                        11999,
+                        'https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=700&q=80'
+                    )">
+
+                    ADD TO CART
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 8 -->
+
+        <div
+            class="product"
+            data-brand="NIKE"
+            data-price="13499">
+
+            <button class="wishlist">
+                ♡
+            </button>
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80"
+                alt="Nike Dunk">
+
+            <div class="product-info">
+
+                <div class="brand">
+                    NIKE
+                </div>
+
+                <h3>
+                    Dunk Low
+                </h3>
+
+                <div class="price">
+                    ₹13,499
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Dunk Low',
+                        'NIKE',
+                        13499,
+                        'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80'
+                    )">
+
+                    ADD TO CART
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 SOLEVault — Premium Sneakers
+
+</footer>
+
+
+
+<<script>
+
+const buttons = document.querySelectorAll(".add-cart");
+
+buttons.forEach((button) => {
+
+    button.addEventListener("click", function () {
+
+        const product = this.closest(".product");
+
+        const name =
+            product.querySelector("h3").innerText;
+
+        const brand =
+            product.querySelector(".brand").innerText;
+
+        const priceText =
+            product.querySelector(".price").innerText;
+
+        const price =
+            Number(priceText.replace(/[₹,]/g, ""));
+
+        const image =
+            product.querySelector(".product-image").src;
+
+        const cartItem = {
+            name: name,
+            brand: brand,
+            price: price,
+            image: image,
+            size: "9",
+            quantity: 1
+        };
+
+        localStorage.setItem(
+            "solevaultCart",
+            JSON.stringify(cartItem)
+        );
+
+        this.innerText = "✓ ADDED TO CART";
+
+        this.style.background = "#222";
+        this.style.color = "white";
+
+        setTimeout(() => {
+
+            window.location.href = "cart.html";
+
+        }, 500);
+
+    });
+
+});
+
+</script>
+
+</script>
+
+
+</body>
+
+</html>
