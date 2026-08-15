@@ -3,23 +3,64 @@ const cors = require("cors");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
+
 app.use(express.json());
 
 
-// Serve your website files
+// =====================================
+// SERVE WEBSITE FILES
+// =====================================
+
 app.use(express.static(__dirname));
 
 
-// Temporary order storage
+// =====================================
+// WEBSITE PAGES
+// =====================================
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("/shop.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "shop.html"));
+});
+
+app.get("/product.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "product.html"));
+});
+
+app.get("/cart.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "cart.html"));
+});
+
+app.get("/checkout.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "checkout.html"));
+});
+
+app.get("/payment.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "payment.html"));
+});
+
+app.get("/success.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "success.html"));
+});
+
+
+// =====================================
+// TEMPORARY ORDER STORAGE
+// =====================================
+
 let orders = [];
 
 
-// ===============================
+// =====================================
 // CREATE ORDER
-// ===============================
+// =====================================
 
 app.post("/api/orders", (req, res) => {
 
@@ -43,6 +84,7 @@ app.post("/api/orders", (req, res) => {
         ) {
 
             return res.status(400).json({
+                success: false,
                 message: "Missing order information"
             });
 
@@ -77,18 +119,38 @@ app.post("/api/orders", (req, res) => {
             orderId: orderId,
 
             customer: {
-                firstName: customer.firstName,
-                lastName: customer.lastName,
-                email: customer.email,
-                phone: customer.phone
+
+                firstName:
+                    customer.firstName || "",
+
+                lastName:
+                    customer.lastName || "",
+
+                email:
+                    customer.email || "",
+
+                phone:
+                    customer.phone || ""
+
             },
 
+
             address: {
-                address: address.address,
-                city: address.city,
-                pincode: address.pincode,
-                state: address.state
+
+                address:
+                    address.address || "",
+
+                city:
+                    address.city || "",
+
+                pincode:
+                    address.pincode || "",
+
+                state:
+                    address.state || ""
+
             },
+
 
             product: product,
 
@@ -102,7 +164,8 @@ app.post("/api/orders", (req, res) => {
 
             orderStatus: "Order Created",
 
-            createdAt: new Date().toISOString()
+            createdAt:
+                new Date().toISOString()
 
         };
 
@@ -118,9 +181,11 @@ app.post("/api/orders", (req, res) => {
 
             amount: order.amount,
 
-            paymentStatus: order.paymentStatus,
+            paymentStatus:
+                order.paymentStatus,
 
-            orderStatus: order.orderStatus
+            orderStatus:
+                order.orderStatus
 
         });
 
@@ -133,7 +198,8 @@ app.post("/api/orders", (req, res) => {
 
             success: false,
 
-            message: "Unable to create order"
+            message:
+                "Unable to create order"
 
         });
 
@@ -142,14 +208,16 @@ app.post("/api/orders", (req, res) => {
 });
 
 
-// ===============================
+// =====================================
 // GET ORDER
-// ===============================
+// =====================================
 
 app.get("/api/orders/:orderId", (req, res) => {
 
     const order = orders.find(
-        o => o.orderId === req.params.orderId
+        o =>
+            o.orderId ===
+            req.params.orderId
     );
 
 
@@ -159,7 +227,8 @@ app.get("/api/orders/:orderId", (req, res) => {
 
             success: false,
 
-            message: "Order not found"
+            message:
+                "Order not found"
 
         });
 
@@ -177,27 +246,14 @@ app.get("/api/orders/:orderId", (req, res) => {
 });
 
 
-// ===============================
-// HOME
-// ===============================
-
-app.get("/", (req, res) => {
-
-    res.sendFile(
-        path.join(__dirname, "index.html")
-    );
-
-});
-
-
-// ===============================
+// =====================================
 // START SERVER
-// ===============================
+// =====================================
 
 app.listen(PORT, () => {
 
     console.log(
-        `SOLEVAULT server running at http://localhost:${PORT}`
+        `SOLEVault server running on port ${PORT}`
     );
 
 });
