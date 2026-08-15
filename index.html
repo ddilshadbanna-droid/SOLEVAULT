@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>SOLEVault | Premium Sneakers</title>
 
 <style>
+
+/* =========================
+   RESET
+========================= */
+
 *{
     margin:0;
     padding:0;
@@ -14,12 +23,20 @@
     font-family:Arial,Helvetica,sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#050505;
     color:white;
 }
 
-/* NAVBAR */
+
+/* =========================
+   NAVBAR
+========================= */
+
 nav{
     height:75px;
     display:flex;
@@ -46,15 +63,16 @@ nav ul{
     gap:30px;
 }
 
-nav ul li a{
+nav a{
     color:white;
     text-decoration:none;
     font-size:13px;
     text-transform:uppercase;
+    transition:.3s;
 }
 
-nav ul li a:hover{
-    color:#aaa;
+nav a:hover{
+    color:#999;
 }
 
 .icons{
@@ -64,51 +82,55 @@ nav ul li a:hover{
     align-items:center;
 }
 
-.icons a{
+.cart-link{
+    color:white;
     text-decoration:none;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
-    min-height:650px;
-    display:flex;
+    min-height:600px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
     align-items:center;
-    justify-content:space-between;
     padding:70px 7%;
-    background:linear-gradient(110deg,#050505 45%,#111 100%);
+    gap:50px;
 }
 
-.hero-text{
-    max-width:520px;
-}
-
-.small-title{
+.hero-content p{
+    color:#777;
+    font-size:12px;
     letter-spacing:5px;
-    font-size:13px;
-    color:#aaa;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
-.hero h1{
-    font-size:clamp(60px,8vw,110px);
-    line-height:.85;
-    margin-bottom:30px;
+.hero-content h1{
+    font-size:75px;
+    line-height:.9;
     letter-spacing:-5px;
+    margin-bottom:30px;
 }
 
-.hero p{
-    color:#aaa;
+.hero-content .description{
+    color:#888;
+    font-size:14px;
     line-height:1.7;
-    max-width:400px;
-    margin-bottom:35px;
+    max-width:450px;
+    letter-spacing:0;
 }
 
 .shop-btn{
     display:inline-block;
+    margin-top:30px;
+    padding:17px 30px;
     background:white;
     color:black;
-    padding:16px 30px;
     text-decoration:none;
+    font-size:12px;
     font-weight:bold;
     transition:.3s;
 }
@@ -118,196 +140,312 @@ nav ul li a:hover{
     transform:translateY(-3px);
 }
 
-.hero-shoe{
-    width:48%;
-    text-align:center;
-}
-
-.hero-shoe img{
+.hero-image{
     width:100%;
-    max-width:600px;
-    filter:drop-shadow(0 25px 35px rgba(255,255,255,.12));
+    height:450px;
+    object-fit:cover;
 }
 
-/* BRANDS */
-.brands{
-    background:white;
-    color:black;
-    padding:55px 7%;
+
+/* =========================
+   SHOP BY BRANDS
+========================= */
+
+.brand-section{
+    background:#f5f5f5;
+    padding:90px 7%;
+    color:#050505;
+}
+
+.brand-title{
     text-align:center;
+    margin-bottom:45px;
 }
 
-.section-title{
-    font-size:13px;
-    letter-spacing:3px;
-    margin-bottom:35px;
+.brand-title p{
+    font-size:11px;
+    letter-spacing:4px;
+    color:#777;
+    margin-bottom:12px;
 }
 
-.brand-list{
+.brand-title h2{
+    font-size:42px;
+    letter-spacing:-1px;
+    font-weight:900;
+}
+
+.brand-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.brand-box{
+    height:150px;
+    background:#fff;
+    border:1px solid #ddd;
     display:flex;
-    justify-content:space-around;
-    flex-wrap:wrap;
-    gap:30px;
-    font-size:20px;
-    font-weight:bold;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    color:#050505;
+    position:relative;
+    overflow:hidden;
+    transition:all .35s ease;
 }
 
-/* PRODUCTS */
-.products{
-    padding:80px 7%;
+.brand-box span{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:1px;
+    transition:.35s;
 }
 
-.heading-row{
+.brand-box small{
+    position:absolute;
+    bottom:18px;
+    font-size:10px;
+    letter-spacing:2px;
+    opacity:0;
+    transform:translateY(10px);
+    transition:.35s;
+}
+
+.brand-box:hover{
+    background:#050505;
+    color:white;
+    transform:translateY(-6px);
+    border-color:#050505;
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.brand-box:hover span{
+    transform:translateY(-8px);
+}
+
+.brand-box:hover small{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =========================
+   NEW ARRIVALS
+========================= */
+
+.arrivals{
+    padding:90px 7%;
+    background:#050505;
+}
+
+.arrivals-top{
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    margin-bottom:35px;
+    align-items:flex-end;
+    margin-bottom:40px;
 }
 
-.heading-row h2{
-    font-size:35px;
+.arrivals-top h2{
+    font-size:65px;
+    line-height:.9;
+    letter-spacing:-4px;
 }
 
 .view-all{
-    color:#aaa;
+    color:#999;
     text-decoration:none;
+    font-size:13px;
+    letter-spacing:2px;
 }
 
-.product-grid{
+.view-all:hover{
+    color:white;
+}
+
+.arrival-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
-.product{
+.arrival-card{
     background:#111;
-    padding-bottom:20px;
-    transition:.3s;
+    overflow:hidden;
 }
 
-.product:hover{
-    transform:translateY(-6px);
-}
-
-.product-img{
+.arrival-card img{
     width:100%;
-    height:260px;
+    height:330px;
     object-fit:cover;
-    background:#eee;
+    display:block;
+    transition:.5s;
 }
 
-.product-info{
-    padding:18px;
+.arrival-card:hover img{
+    transform:scale(1.05);
 }
 
-.product-info h3{
-    font-size:15px;
-    margin-bottom:10px;
+.arrival-info{
+    padding:20px;
 }
 
-.product-info p{
-    color:#aaa;
-    font-size:14px;
-}
-
-/* FEATURES */
-.features{
-    border-top:1px solid #222;
-    border-bottom:1px solid #222;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    padding:35px 7%;
-    text-align:center;
-}
-
-.feature h3{
-    font-size:14px;
+.arrival-info p{
+    color:#777;
+    font-size:10px;
+    letter-spacing:2px;
     margin-bottom:8px;
 }
 
-.feature p{
-    color:#777;
-    font-size:12px;
+.arrival-info h3{
+    font-size:17px;
+    margin-bottom:10px;
 }
 
-/* FOOTER */
+.arrival-info span{
+    font-size:14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
-    padding:60px 7% 30px;
-}
-
-.footer-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:40px;
-    margin-bottom:50px;
-}
-
-footer h3{
-    margin-bottom:20px;
-}
-
-footer p,
-footer a{
-    color:#777;
-    font-size:13px;
-    line-height:2;
-    text-decoration:none;
-}
-
-.copyright{
     border-top:1px solid #222;
-    padding-top:25px;
-    color:#555;
+    padding:40px 7%;
+    text-align:center;
+    color:#666;
     font-size:12px;
 }
 
-/* MOBILE */
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media(max-width:900px){
+
+    .hero{
+        grid-template-columns:1fr;
+        padding:50px 6%;
+    }
+
+    .hero-content h1{
+        font-size:60px;
+    }
+
+    .hero-image{
+        height:400px;
+    }
+
+    .brand-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .arrival-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    nav{
+        padding:0 5%;
+    }
 
     nav ul{
         display:none;
     }
 
     .hero{
-        flex-direction:column;
-        text-align:center;
+        padding:45px 5%;
     }
 
-    .hero-shoe{
-        width:90%;
-        margin-top:40px;
+    .hero-content h1{
+        font-size:52px;
+        letter-spacing:-3px;
     }
 
-    .product-grid{
+    .hero-image{
+        height:330px;
+    }
+
+    .brand-section{
+        padding:65px 5%;
+    }
+
+    .brand-title h2{
+        font-size:30px;
+    }
+
+    .brand-grid{
         grid-template-columns:repeat(2,1fr);
+        gap:12px;
     }
 
-    .features{
-        grid-template-columns:repeat(2,1fr);
-        gap:30px;
+    .brand-box{
+        height:125px;
     }
 
-    .footer-grid{
+    .brand-box span{
+        font-size:17px;
+    }
+
+    .arrivals{
+        padding:65px 5%;
+    }
+
+    .arrivals-top{
+        align-items:center;
+    }
+
+    .arrivals-top h2{
+        font-size:45px;
+    }
+
+    .arrival-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:450px){
+
+    .hero-content h1{
+        font-size:45px;
+    }
+
+    .brand-grid{
         grid-template-columns:1fr 1fr;
     }
-}
 
-@media(max-width:550px){
-
-    .product-grid{
-        grid-template-columns:1fr;
+    .brand-box{
+        height:110px;
     }
 
-    .footer-grid{
-        grid-template-columns:1fr;
+    .brand-box span{
+        font-size:15px;
     }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- NAVBAR -->
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
 <nav>
 
     <div class="logo">
@@ -315,30 +453,70 @@ footer a{
     </div>
 
     <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="shop.html">Brands</a></li>
-        <li><a href="shop.html">New Drops</a></li>
-        <li><a href="shop.html">Best Sellers</a></li>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="shop.html">
+                Shop
+            </a>
+        </li>
+
+        <li>
+            <a href="shop.html?brand=ALL">
+                Brands
+            </a>
+        </li>
+
+        <li>
+            <a href="shop.html?brand=NEW">
+                New Drops
+            </a>
+        </li>
+
+        <li>
+            <a href="shop.html?brand=BEST">
+                Best Sellers
+            </a>
+        </li>
+
     </ul>
 
     <div class="icons">
-        🔍
-        ♡
-        <a href="cart.html">🛒</a>
+
+        <span>🔍</span>
+
+        <span>♡</span>
+
+        <a
+            href="cart.html"
+            class="cart-link">
+
+            🛒
+
+        </a>
+
     </div>
 
 </nav>
 
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
-    <div class="hero-text">
+    <div class="hero-content">
 
-        <div class="small-title">
+        <p>
             STEP INTO YOUR LEGACY
-        </div>
+        </p>
 
         <h1>
             OWN<br>
@@ -346,287 +524,280 @@ footer a{
             STREET.
         </h1>
 
-        <p>
-            Premium sneakers for those who lead,
-            not follow. Discover authentic sneakers
-            from the world's biggest brands.
-        </p>
+        <div class="description">
 
-        <a href="shop.html" class="shop-btn">
+            Premium sneakers for those who lead,
+            not follow.<br>
+
+            Discover authentic sneakers from
+            the world's biggest brands.
+
+        </div>
+
+        <a
+            href="shop.html"
+            class="shop-btn">
+
             SHOP NOW →
+
         </a>
 
     </div>
 
 
-    <div class="hero-shoe">
+    <div>
 
         <img
-        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80"
-        alt="Premium Sneaker">
+            class="hero-image"
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=85"
+            alt="Premium Nike Sneaker">
 
     </div>
 
 </section>
 
 
-<!-- BRANDS -->
-<section class="brands">
 
-    <div class="section-title">
-        SHOP BY BRANDS
+<!-- =========================
+     SHOP BY BRANDS
+========================= -->
+
+<section class="brand-section">
+
+    <div class="brand-title">
+
+        <p>
+            EXPLORE COLLECTION
+        </p>
+
+        <h2>
+            SHOP BY BRANDS
+        </h2>
+
     </div>
 
-    <div class="brand-list">
 
-        <div>NIKE</div>
-        <div>adidas</div>
-        <div>PUMA</div>
-        <div>NEW BALANCE</div>
-        <div>CONVERSE</div>
-        <div>ASICS</div>
+    <div class="brand-grid">
+
+
+        <a
+            href="shop.html?brand=NIKE"
+            class="brand-box">
+
+            <span>
+                NIKE
+            </span>
+
+            <small>
+                EXPLORE →
+            </small>
+
+        </a>
+
+
+        <a
+            href="shop.html?brand=ADIDAS"
+            class="brand-box">
+
+            <span>
+                adidas
+            </span>
+
+            <small>
+                EXPLORE →
+            </small>
+
+        </a>
+
+
+        <a
+            href="shop.html?brand=PUMA"
+            class="brand-box">
+
+            <span>
+                PUMA
+            </span>
+
+            <small>
+                EXPLORE →
+            </small>
+
+        </a>
+
+
+        <a
+            href="shop.html?brand=NEW%20BALANCE"
+            class="brand-box">
+
+            <span>
+                NEW BALANCE
+            </span>
+
+            <small>
+                EXPLORE →
+            </small>
+
+        </a>
+
+
+        <a
+            href="shop.html?brand=CONVERSE"
+            class="brand-box">
+
+            <span>
+                CONVERSE
+            </span>
+
+            <small>
+                EXPLORE →
+            </small>
+
+        </a>
+
+
+        <a
+            href="shop.html?brand=ASICS"
+            class="brand-box">
+
+            <span>
+                ASICS
+            </span>
+
+            <small>
+                EXPLORE →
+            </small>
+
+        </a>
+
 
     </div>
 
 </section>
 
 
-<!-- PRODUCTS -->
-<section class="products">
 
-    <div class="heading-row">
+<!-- =========================
+     NEW ARRIVALS
+========================= -->
 
-        <h2>NEW ARRIVALS</h2>
+<section class="arrivals">
 
-        <a href="shop.html" class="view-all">
-            VIEW ALL →
+    <div class="arrivals-top">
+
+        <h2>
+            NEW<br>
+            ARRIVALS
+        </h2>
+
+        <a
+            href="shop.html"
+            class="view-all">
+
+            VIEW ALL<br>
+            →
+
         </a>
 
     </div>
 
 
-    <div class="product-grid">
+    <div class="arrival-grid">
 
-        <div class="product">
+
+        <div class="arrival-card">
 
             <img
-            class="product-img"
-            src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80"
-            alt="Air Jordan 1">
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+                alt="Nike">
 
-            <div class="product-info">
+            <div class="arrival-info">
 
-                <h3>Air Jordan 1 Retro</h3>
+                <p>
+                    NIKE
+                </p>
 
-                <p>₹14,999</p>
+                <h3>
+                    Air Max Street
+                </h3>
+
+                <span>
+                    ₹12,999
+                </span>
 
             </div>
 
         </div>
 
 
-        <div class="product">
+
+        <div class="arrival-card">
 
             <img
-            class="product-img"
-            src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=700&q=80"
-            alt="Adidas Campus">
+                src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80"
+                alt="Adidas">
 
-            <div class="product-info">
+            <div class="arrival-info">
 
-                <h3>Adidas Campus</h3>
+                <p>
+                    ADIDAS
+                </p>
 
-                <p>₹8,999</p>
+                <h3>
+                    Campus 00s
+                </h3>
+
+                <span>
+                    ₹8,999
+                </span>
 
             </div>
 
         </div>
 
 
-        <div class="product">
+
+        <div class="arrival-card">
 
             <img
-            class="product-img"
-            src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80"
-            alt="New Balance 550">
+                src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=800&q=80"
+                alt="Puma">
 
-            <div class="product-info">
+            <div class="arrival-info">
 
-                <h3>New Balance 550</h3>
+                <p>
+                    PUMA
+                </p>
 
-                <p>₹9,499</p>
+                <h3>
+                    RS-X Premium
+                </h3>
+
+                <span>
+                    ₹10,499
+                </span>
 
             </div>
 
         </div>
 
-
-        <div class="product">
-
-            <img
-            class="product-img"
-            src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=700&q=80"
-            alt="Puma RS-X">
-
-            <div class="product-info">
-
-                <h3>Puma RS-X</h3>
-
-                <p>₹10,499</p>
-
-            </div>
-
-        </div>
 
     </div>
 
 </section>
 
 
-<!-- FEATURES -->
-<section class="features">
 
-    <div class="feature">
+<!-- =========================
+     FOOTER
+========================= -->
 
-        <h3>🚚 FREE SHIPPING</h3>
-
-        <p>
-            On orders above ₹1999
-        </p>
-
-    </div>
-
-
-    <div class="feature">
-
-        <h3>↩️ EASY RETURNS</h3>
-
-        <p>
-            7 days return & exchange
-        </p>
-
-    </div>
-
-
-    <div class="feature">
-
-        <h3>✓ 100% ORIGINAL</h3>
-
-        <p>
-            Authentic products
-        </p>
-
-    </div>
-
-
-    <div class="feature">
-
-        <h3>🔒 SECURE PAYMENT</h3>
-
-        <p>
-            Safe & trusted checkout
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
 <footer>
 
-    <div class="footer-grid">
-
-        <div>
-
-            <h3>SOLEVault</h3>
-
-            <p>
-                Your ultimate destination for
-                premium sneakers. 100% authentic.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h3>SHOP</h3>
-
-            <a href="shop.html">
-                All Sneakers
-            </a>
-
-            <br>
-
-            <a href="shop.html">
-                New Drops
-            </a>
-
-            <br>
-
-            <a href="shop.html">
-                Best Sellers
-            </a>
-
-        </div>
-
-
-        <div>
-
-            <h3>HELP</h3>
-
-            <a href="checkout.html">
-                Checkout
-            </a>
-
-            <br>
-
-            <a href="cart.html">
-                Cart
-            </a>
-
-            <br>
-
-            <a href="success.html">
-                Order Status
-            </a>
-
-        </div>
-
-
-        <div>
-
-            <h3>ABOUT</h3>
-
-            <a href="#">
-                About Us
-            </a>
-
-            <br>
-
-            <a href="#">
-                Contact
-            </a>
-
-            <br>
-
-            <a href="#">
-                Privacy Policy
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="copyright">
-
-        ©️ 2026 SOLEVault. All Rights Reserved.
-
-    </div>
+    © 2026 SOLEVault — Premium Sneakers
 
 </footer>
 
+
 </body>
+
 </html>
