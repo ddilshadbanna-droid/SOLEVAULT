@@ -5,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Shop | SOLEVault</title>
 
@@ -23,7 +22,6 @@ body{
     background:#050505;
     color:white;
 }
-
 
 /* NAVBAR */
 
@@ -75,7 +73,6 @@ nav a:hover{
     text-decoration:none;
 }
 
-
 /* HEADER */
 
 .page-header{
@@ -95,7 +92,6 @@ nav a:hover{
     font-size:60px;
     letter-spacing:-3px;
 }
-
 
 /* FILTERS */
 
@@ -135,7 +131,6 @@ nav a:hover{
     border:1px solid #333;
     padding:10px 15px;
 }
-
 
 /* PRODUCTS */
 
@@ -185,11 +180,6 @@ nav a:hover{
     background:white;
     font-size:17px;
     z-index:2;
-    transition:.3s;
-}
-
-.wishlist:hover{
-    transform:scale(1.15);
 }
 
 .product-info{
@@ -229,7 +219,6 @@ nav a:hover{
     transform:translateY(-2px);
 }
 
-
 /* FOOTER */
 
 footer{
@@ -240,7 +229,6 @@ footer{
     font-size:12px;
     text-align:center;
 }
-
 
 /* ANIMATIONS */
 
@@ -271,7 +259,6 @@ footer{
     }
 
 }
-
 
 /* RESPONSIVE */
 
@@ -317,9 +304,7 @@ footer{
 
 </head>
 
-
 <body>
-
 
 <!-- NAVBAR -->
 
@@ -329,41 +314,19 @@ footer{
         SOLE<span>Vault</span>
     </div>
 
-
     <ul>
 
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
+        <li><a href="index.html">Home</a></li>
 
-        <li>
-            <a href="shop.html">
-                Shop
-            </a>
-        </li>
+        <li><a href="shop.html">Shop</a></li>
 
-        <li>
-            <a href="shop.html">
-                Brands
-            </a>
-        </li>
+        <li><a href="shop.html">Brands</a></li>
 
-        <li>
-            <a href="shop.html">
-                New Drops
-            </a>
-        </li>
+        <li><a href="shop.html">New Drops</a></li>
 
-        <li>
-            <a href="shop.html">
-                Best Sellers
-            </a>
-        </li>
+        <li><a href="shop.html">Best Sellers</a></li>
 
     </ul>
-
 
     <div class="icons">
 
@@ -371,35 +334,21 @@ footer{
 
         <span>♡</span>
 
-        <a
-            href="cart.html"
-            class="cart-link">
-
-            🛒
-
-        </a>
+        <a href="cart.html" class="cart-link">🛒</a>
 
     </div>
 
 </nav>
 
-
-
 <!-- HEADER -->
 
 <section class="page-header">
 
-    <p>
-        EXPLORE THE COLLECTION
-    </p>
+    <p>EXPLORE THE COLLECTION</p>
 
-    <h1>
-        ALL SNEAKERS
-    </h1>
+    <h1>ALL SNEAKERS</h1>
 
 </section>
-
-
 
 <!-- FILTERS -->
 
@@ -407,51 +356,31 @@ footer{
 
     <div class="filter-buttons">
 
-        <button
-            class="active"
-            onclick="filterProducts('ALL',this)">
-
+        <button class="active" onclick="filterProducts('ALL',this)">
             ALL
-
         </button>
 
-        <button
-            onclick="filterProducts('NIKE',this)">
-
+        <button onclick="filterProducts('NIKE',this)">
             NIKE
-
         </button>
 
-        <button
-            onclick="filterProducts('ADIDAS',this)">
-
+        <button onclick="filterProducts('ADIDAS',this)">
             ADIDAS
-
         </button>
 
-        <button
-            onclick="filterProducts('PUMA',this)">
-
+        <button onclick="filterProducts('PUMA',this)">
             PUMA
-
         </button>
 
-        <button
-            onclick="filterProducts('NEW BALANCE',this)">
-
+        <button onclick="filterProducts('NEW BALANCE',this)">
             NEW BALANCE
-
         </button>
 
-        <button
-            onclick="filterProducts('ASICS',this)">
-
+        <button onclick="filterProducts('ASICS',this)">
             ASICS
-
         </button>
 
     </div>
-
 
     <div class="sort">
 
@@ -475,431 +404,315 @@ footer{
 
 </section>
 
-
-
-<!-- PRODUCT SECTION -->
+<!-- PRODUCTS -->
 
 <section class="shop">
 
-    <div class="product-grid" id="productGrid">
+<div class="product-grid" id="productGrid">
 
+<!-- PRODUCT 1 -->
 
-        <!-- PRODUCT 1 -->
+<div class="product" data-brand="NIKE" data-price="12999">
 
-        <div
-            class="product"
-            data-brand="NIKE"
-            data-price="12999">
+<button class="wishlist">♡</button>
 
-            <button class="wishlist">
-                ♡
-            </button>
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
+alt="Nike Sneaker">
 
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
-                alt="Nike Sneaker">
+<div class="product-info">
 
-            <div class="product-info">
+<div class="brand">NIKE</div>
 
-                <div class="brand">
-                    NIKE
-                </div>
+<h3>Air Max Street</h3>
 
-                <h3>
-                    Air Max Street
-                </h3>
+<div class="price">₹12,999</div>
 
-                <div class="price">
-                    ₹12,999
-                </div>
+<button class="add-cart">ADD TO CART</button>
 
-                <button
-                    class="add-cart"
-                    onclick="addToCart(
-                        'Air Max Street',
-                        'NIKE',
-                        12999,
-                        'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80'
-                    )">
+</div>
 
-                    ADD TO CART
+</div>
 
-                </button>
+<!-- PRODUCT 2 -->
 
-            </div>
+<div class="product" data-brand="NIKE" data-price="14999">
 
-        </div>
+<button class="wishlist">♡</button>
 
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80"
+alt="Jordan Sneaker">
 
+<div class="product-info">
 
-        <!-- PRODUCT 2 -->
+<div class="brand">NIKE</div>
 
-        <div
-            class="product"
-            data-brand="NIKE"
-            data-price="14999">
+<h3>Air Jordan Retro</h3>
 
-            <button class="wishlist">
-                ♡
-            </button>
+<div class="price">₹14,999</div>
 
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80"
-                alt="Jordan Sneaker">
+<button class="add-cart">ADD TO CART</button>
 
-            <div class="product-info">
+</div>
 
-                <div class="brand">
-                    NIKE
-                </div>
+</div>
 
-                <h3>
-                    Air Jordan Retro
-                </h3>
+<!-- PRODUCT 3 -->
 
-                <div class="price">
-                    ₹14,999
-                </div>
+<div class="product" data-brand="ADIDAS" data-price="8999">
 
-                <button
-                    class="add-cart"
-                    onclick="addToCart(
-                        'Air Jordan Retro',
-                        'NIKE',
-                        14999,
-                        'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80'
-                    )">
+<button class="wishlist">♡</button>
 
-                    ADD TO CART
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=700&q=80"
+alt="Adidas Sneaker">
 
-                </button>
+<div class="product-info">
 
-            </div>
+<div class="brand">ADIDAS</div>
 
-        </div>
+<h3>Campus 00s</h3>
 
+<div class="price">₹8,999</div>
 
+<button class="add-cart">ADD TO CART</button>
 
-        <!-- PRODUCT 3 -->
+</div>
 
-        <div
-            class="product"
-            data-brand="ADIDAS"
-            data-price="8999">
+</div>
 
-            <button class="wishlist">
-                ♡
-            </button>
+<!-- PRODUCT 4 -->
 
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=700&q=80"
-                alt="Adidas Sneaker">
+<div class="product" data-brand="NEW BALANCE" data-price="9499">
 
-            <div class="product-info">
+<button class="wishlist">♡</button>
 
-                <div class="brand">
-                    ADIDAS
-                </div>
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80"
+alt="New Balance Sneaker">
 
-                <h3>
-                    Campus 00s
-                </h3>
+<div class="product-info">
 
-                <div class="price">
-                    ₹8,999
-                </div>
+<div class="brand">NEW BALANCE</div>
 
-                <button
-                    class="add-cart"
-                    onclick="addToCart(
-                        'Campus 00s',
-                        'ADIDAS',
-                        8999,
-                        'https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=700&q=80'
-                    )">
+<h3>550 Classic</h3>
 
-                    ADD TO CART
+<div class="price">₹9,499</div>
 
-                </button>
+<button class="add-cart">ADD TO CART</button>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
+<!-- PRODUCT 5 -->
 
+<div class="product" data-brand="PUMA" data-price="10499">
 
-        <!-- PRODUCT 4 -->
+<button class="wishlist">♡</button>
 
-        <div
-            class="product"
-            data-brand="NEW BALANCE"
-            data-price="9499">
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=700&q=80"
+alt="Puma Sneaker">
 
-            <button class="wishlist">
-                ♡
-            </button>
+<div class="product-info">
 
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80"
-                alt="New Balance Sneaker">
+<div class="brand">PUMA</div>
 
-            <div class="product-info">
+<h3>RS-X Premium</h3>
 
-                <div class="brand">
-                    NEW BALANCE
-                </div>
+<div class="price">₹10,499</div>
 
-                <h3>
-                    550 Classic
-                </h3>
+<button class="add-cart">ADD TO CART</button>
 
-                <div class="price">
-                    ₹9,499
-                </div>
+</div>
 
-                <button
-                    class="add-cart"
-                    onclick="addToCart(
-                        '550 Classic',
-                        'NEW BALANCE',
-                        9499,
-                        'https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80'
-                    )">
+</div>
 
-                    ADD TO CART
+<!-- PRODUCT 6 -->
 
-                </button>
+<div class="product" data-brand="CONVERSE" data-price="7499">
 
-            </div>
+<button class="wishlist">♡</button>
 
-        </div>
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=700&q=80"
+alt="Converse Sneaker">
 
+<div class="product-info">
 
+<div class="brand">CONVERSE</div>
 
-        <!-- PRODUCT 5 -->
+<h3>Chuck 70</h3>
 
-        <div
-            class="product"
-            data-brand="PUMA"
-            data-price="10499">
+<div class="price">₹7,499</div>
 
-            <button class="wishlist">
-                ♡
-            </button>
+<button class="add-cart">ADD TO CART</button>
 
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=700&q=80"
-                alt="Puma Sneaker">
+</div>
 
-            <div class="product-info">
+</div>
 
-                <div class="brand">
-                    PUMA
-                </div>
+<!-- PRODUCT 7 -->
 
-                <h3>
-                    RS-X Premium
-                </h3>
+<div class="product" data-brand="ASICS" data-price="11999">
 
-                <div class="price">
-                    ₹10,499
-                </div>
+<button class="wishlist">♡</button>
 
-                <button
-                    class="add-cart"
-                    onclick="addToCart(
-                        'RS-X Premium',
-                        'PUMA',
-                        10499,
-                        'https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=700&q=80'
-                    )">
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=700&q=80"
+alt="ASICS Sneaker">
 
-                    ADD TO CART
+<div class="product-info">
 
-                </button>
+<div class="brand">ASICS</div>
 
-            </div>
+<h3>Gel-Kayano</h3>
 
-        </div>
+<div class="price">₹11,999</div>
 
+<button class="add-cart">ADD TO CART</button>
 
+</div>
 
-        <!-- PRODUCT 6 -->
+</div>
 
-        <div
-            class="product"
-            data-brand="CONVERSE"
-            data-price="7499">
+<!-- PRODUCT 8 -->
 
-            <button class="wishlist">
-                ♡
-            </button>
+<div class="product" data-brand="NIKE" data-price="13499">
 
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=700&q=80"
-                alt="Converse Sneaker">
+<button class="wishlist">♡</button>
 
-            <div class="product-info">
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80"
+alt="Nike Dunk">
 
-                <div class="brand">
-                    CONVERSE
-                </div>
+<div class="product-info">
 
-                <h3>
-                    Chuck 70
-                </h3>
+<div class="brand">NIKE</div>
 
-                <div class="price">
-                    ₹7,499
-                </div>
+<h3>Dunk Low</h3>
 
-                <button
-                    class="add-cart"
-                    onclick="addToCart(
-                        'Chuck 70',
-                        'CONVERSE',
-                        7499,
-                        'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=700&q=80'
-                    )">
+<div class="price">₹13,499</div>
 
-                    ADD TO CART
+<button class="add-cart">ADD TO CART</button>
 
-                </button>
+</div>
 
-            </div>
+</div>
 
-        </div>
-
-
-
-        <!-- PRODUCT 7 -->
-
-        <div
-            class="product"
-            data-brand="ASICS"
-            data-price="11999">
-
-            <button class="wishlist">
-                ♡
-            </button>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=700&q=80"
-                alt="ASICS Sneaker">
-
-            <div class="product-info">
-
-                <div class="brand">
-                    ASICS
-                </div>
-
-                <h3>
-                    Gel-Kayano
-                </h3>
-
-                <div class="price">
-                    ₹11,999
-                </div>
-
-                <button
-                    class="add-cart"
-                    onclick="addToCart(
-                        'Gel-Kayano',
-                        'ASICS',
-                        11999,
-                        'https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=700&q=80'
-                    )">
-
-                    ADD TO CART
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 8 -->
-
-        <div
-            class="product"
-            data-brand="NIKE"
-            data-price="13499">
-
-            <button class="wishlist">
-                ♡
-            </button>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80"
-                alt="Nike Dunk">
-
-            <div class="product-info">
-
-                <div class="brand">
-                    NIKE
-                </div>
-
-                <h3>
-                    Dunk Low
-                </h3>
-
-                <div class="price">
-                    ₹13,499
-                </div>
-
-                <button
-                    class="add-cart"
-                    onclick="addToCart(
-                        'Dunk Low',
-                        'NIKE',
-                        13499,
-                        'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80'
-                    )">
-
-                    ADD TO CART
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-    </div>
+</div>
 
 </section>
-
-
 
 <!-- FOOTER -->
 
 <footer>
 
-    © 2026 SOLEVault — Premium Sneakers
+©️ 2026 SOLEVault — Premium Sneakers
 
 </footer>
 
+<script>
+
+/* FILTER */
+
+function filterProducts(brand, button){
+
+    const products =
+        document.querySelectorAll(".product");
+
+    products.forEach(product => {
+
+        if(
+            brand === "ALL" ||
+            product.dataset.brand === brand
+        ){
+
+            product.style.display = "";
+
+        }else{
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+    document
+    .querySelectorAll(".filter-buttons button")
+    .forEach(btn => {
+
+        btn.classList.remove("active");
+
+    });
+
+    button.classList.add("active");
+
+}
 
 
-<<script>
+/* SORT */
 
-const buttons = document.querySelectorAll(".add-cart");
+function sortProducts(type){
 
-buttons.forEach((button) => {
+    const grid =
+        document.getElementById("productGrid");
 
-    button.addEventListener("click", function () {
+    const products =
+        Array.from(
+            grid.querySelectorAll(".product")
+        );
 
-        const product = this.closest(".product");
+    if(type === "low"){
+
+        products.sort(
+            (a,b) =>
+            Number(a.dataset.price) -
+            Number(b.dataset.price)
+        );
+
+    }
+
+    if(type === "high"){
+
+        products.sort(
+            (a,b) =>
+            Number(b.dataset.price) -
+            Number(a.dataset.price)
+        );
+
+    }
+
+    products.forEach(product => {
+
+        grid.appendChild(product);
+
+    });
+
+}
+
+
+/* ADD TO CART */
+
+const buttons =
+    document.querySelectorAll(".add-cart");
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", function(){
+
+        const product =
+            this.closest(".product");
 
         const name =
             product.querySelector("h3").innerText;
@@ -911,18 +724,27 @@ buttons.forEach((button) => {
             product.querySelector(".price").innerText;
 
         const price =
-            Number(priceText.replace(/[₹,]/g, ""));
+            Number(
+                priceText.replace(/[₹,]/g,"")
+            );
 
         const image =
             product.querySelector(".product-image").src;
 
         const cartItem = {
-            name: name,
-            brand: brand,
-            price: price,
-            image: image,
-            size: "9",
-            quantity: 1
+
+            name:name,
+
+            brand:brand,
+
+            price:price,
+
+            image:image,
+
+            size:"9",
+
+            quantity:1
+
         };
 
         localStorage.setItem(
@@ -930,25 +752,27 @@ buttons.forEach((button) => {
             JSON.stringify(cartItem)
         );
 
-        this.innerText = "✓ ADDED TO CART";
+        this.innerText =
+            "✓ ADDED TO CART";
 
-        this.style.background = "#222";
-        this.style.color = "white";
+        this.style.background =
+            "#222";
+
+        this.style.color =
+            "white";
 
         setTimeout(() => {
 
-            window.location.href = "cart.html";
+            window.location.href =
+                "cart.html";
 
-        }, 500);
+        },500);
 
     });
 
 });
 
 </script>
-
-</script>
-
 
 </body>
 
