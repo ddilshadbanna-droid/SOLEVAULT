@@ -1,4 +1,4 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,622 +9,635 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#fff;
-    color:#111;
+background:#fff;
+color:#111;
 }
 
 /* ================= NAVBAR ================= */
 
 .navbar{
-    height:70px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 4%;
-    background:#fff;
-    border-bottom:1px solid #eee;
-    position:sticky;
-    top:0;
-    z-index:1000;
+height:70px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 4%;
+background:#fff;
+border-bottom:1px solid #eee;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
-    font-size:27px;
-    font-weight:900;
-    letter-spacing:-2px;
+font-size:27px;
+font-weight:900;
+letter-spacing:-2px;
 }
 
 .logo span{
-    color:#b8e600;
+color:#b8e600;
 }
 
 .nav-links{
-    display:flex;
-    gap:32px;
-    list-style:none;
+display:flex;
+gap:32px;
+list-style:none;
 }
 
 .nav-links a{
-    text-decoration:none;
-    color:#111;
-    font-size:14px;
-    font-weight:600;
+text-decoration:none;
+color:#111;
+font-size:14px;
+font-weight:600;
 }
 
 .nav-links a:hover{
-    color:#9fca00;
+color:#9fca00;
 }
 
 .nav-right{
-    display:flex;
-    align-items:center;
-    gap:16px;
+display:flex;
+align-items:center;
+gap:16px;
 }
 
 .search{
-    width:170px;
-    height:36px;
-    border:1px solid #ddd;
-    border-radius:3px;
-    display:flex;
-    align-items:center;
-    padding:0 10px;
+width:170px;
+height:36px;
+border:1px solid #ddd;
+border-radius:3px;
+display:flex;
+align-items:center;
+padding:0 10px;
 }
 
 .search input{
-    border:none;
-    outline:none;
-    width:100%;
-    font-size:12px;
+border:none;
+outline:none;
+width:100%;
+font-size:12px;
 }
 
 .icon{
-    text-decoration:none;
-    color:#111;
-    font-size:20px;
+text-decoration:none;
+color:#111;
+font-size:20px;
 }
 
 /* ================= HERO ================= */
 
 .hero{
-    min-height:520px;
-    background:
-        linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.65)),
-        url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1600&q=90");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    padding:70px 6%;
-    position:relative;
-    overflow:hidden;
+min-height:520px;
+background:
+linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.65)),
+url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1600&q=90");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:70px 6%;
+position:relative;
+overflow:hidden;
 }
 
 .hero:after{
-    content:"";
-    position:absolute;
-    width:600px;
-    height:600px;
-    background:#b8e600;
-    opacity:.16;
-    border-radius:50%;
-    right:-200px;
-    top:-100px;
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:#b8e600;
+opacity:.16;
+border-radius:50%;
+right:-200px;
+top:-100px;
 }
 
 .hero-content{
-    position:relative;
-    z-index:2;
-    max-width:520px;
+position:relative;
+z-index:2;
+max-width:520px;
 }
 
 .hero-small{
-    color:#b8e600;
-    letter-spacing:4px;
-    font-size:12px;
-    margin-bottom:18px;
+color:#b8e600;
+letter-spacing:4px;
+font-size:12px;
+margin-bottom:18px;
 }
 
 .hero h1{
-    color:white;
-    font-size:70px;
-    line-height:.88;
-    letter-spacing:-4px;
-    margin-bottom:25px;
+color:white;
+font-size:70px;
+line-height:.88;
+letter-spacing:-4px;
+margin-bottom:25px;
 }
 
 .hero h1 span{
-    color:#b8e600;
+color:#b8e600;
 }
 
 .hero p{
-    color:#ddd;
-    font-size:15px;
-    line-height:1.7;
-    max-width:400px;
-    margin-bottom:28px;
+color:#ddd;
+font-size:15px;
+line-height:1.7;
+max-width:400px;
+margin-bottom:28px;
 }
 
 .hero-buttons{
-    display:flex;
-    gap:12px;
+display:flex;
+gap:12px;
 }
 
 .btn{
-    padding:15px 25px;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:13px;
-    display:inline-block;
-    transition:.3s;
+padding:15px 25px;
+text-decoration:none;
+font-weight:bold;
+font-size:13px;
+display:inline-block;
+transition:.3s;
 }
 
 .btn-green{
-    background:#b8e600;
-    color:#111;
+background:#b8e600;
+color:#111;
 }
 
 .btn-green:hover{
-    background:#d4ff28;
-    transform:translateY(-2px);
+background:#d4ff28;
+transform:translateY(-2px);
 }
 
 .btn-outline{
-    border:1px solid white;
-    color:white;
+border:1px solid white;
+color:white;
 }
 
 .btn-outline:hover{
-    background:white;
-    color:#111;
+background:white;
+color:#111;
 }
 
 /* ================= SECTION ================= */
 
 .section{
-    padding:55px 5%;
+padding:55px 5%;
 }
 
 .section-title{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:28px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:28px;
 }
 
 .section-title h2{
-    font-size:25px;
-    letter-spacing:-1px;
+font-size:25px;
+letter-spacing:-1px;
 }
 
 .view-all{
-    text-decoration:none;
-    color:#555;
-    font-size:13px;
+text-decoration:none;
+color:#555;
+font-size:13px;
 }
 
 .view-all:hover{
-    color:#b8e600;
+color:#b8e600;
 }
 
 /* ================= BRANDS ================= */
 
 .brands{
-    display:grid;
-    grid-template-columns:repeat(6,1fr);
-    gap:15px;
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:15px;
 }
 
 .brand-box{
-    height:90px;
-    border:1px solid #eee;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:22px;
-    font-weight:900;
-    background:#fafafa;
-    transition:.3s;
+height:90px;
+border:1px solid #eee;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:22px;
+font-weight:900;
+background:#fafafa;
+transition:.3s;
 }
 
 .brand-box:hover{
-    background:#b8e600;
-    transform:translateY(-4px);
+background:#b8e600;
+transform:translateY(-4px);
 }
 
 /* ================= CATEGORIES ================= */
 
 .categories{
-    display:grid;
-    grid-template-columns:repeat(6,1fr);
-    gap:15px;
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:15px;
 }
 
 .category{
-    background:#f6f6f6;
-    padding:15px;
-    text-align:center;
-    text-decoration:none;
-    color:#111;
-    transition:.3s;
+background:#f6f6f6;
+padding:15px;
+text-align:center;
+text-decoration:none;
+color:#111;
+transition:.3s;
 }
 
 .category:hover{
-    transform:translateY(-5px);
-    background:#eee;
+transform:translateY(-5px);
+background:#eee;
 }
 
 .category img{
-    width:100%;
-    height:130px;
-    object-fit:cover;
+width:100%;
+height:130px;
+object-fit:cover;
 }
 
 .category h3{
-    font-size:13px;
-    margin-top:12px;
+font-size:13px;
+margin-top:12px;
 }
 
 /* ================= PRODUCTS ================= */
 
 .products{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
 }
 
 .product{
-    background:#f7f7f7;
-    position:relative;
-    overflow:hidden;
-    transition:.3s;
+background:#f7f7f7;
+position:relative;
+overflow:hidden;
+transition:.3s;
 }
 
 .product:hover{
-    transform:translateY(-6px);
+transform:translateY(-6px);
 }
 
 .product-image{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    display:block;
+width:100%;
+height:260px;
+object-fit:cover;
+display:block;
 }
 
 .wishlist{
-    position:absolute;
-    top:12px;
-    right:12px;
-    width:35px;
-    height:35px;
-    border:none;
-    border-radius:50%;
-    background:white;
-    font-size:18px;
-    cursor:pointer;
-    z-index:2;
+position:absolute;
+top:12px;
+right:12px;
+width:35px;
+height:35px;
+border:none;
+border-radius:50%;
+background:white;
+font-size:18px;
+cursor:pointer;
+z-index:2;
 }
 
 .product-info{
-    padding:18px;
+padding:18px;
 }
 
 .product-brand{
-    color:#777;
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    margin-bottom:7px;
+color:#777;
+font-size:11px;
+text-transform:uppercase;
+letter-spacing:1px;
+margin-bottom:7px;
 }
 
 .product-name{
-    font-size:15px;
-    font-weight:bold;
-    margin-bottom:8px;
+font-size:15px;
+font-weight:bold;
+margin-bottom:8px;
 }
 
 .product-price{
-    font-weight:bold;
-    font-size:15px;
-    margin-bottom:14px;
+font-weight:bold;
+font-size:15px;
+margin-bottom:14px;
 }
 
 .add-cart{
-    width:100%;
-    padding:12px;
-    border:none;
-    background:#111;
-    color:white;
-    cursor:pointer;
-    font-weight:bold;
-    transition:.3s;
+width:100%;
+padding:12px;
+border:none;
+background:#111;
+color:white;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
 }
 
 .add-cart:hover{
-    background:#b8e600;
-    color:#111;
+background:#b8e600;
+color:#111;
 }
 
 /* ================= BANNERS ================= */
 
 .banners{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
 }
 
 .banner{
-    min-height:230px;
-    padding:35px;
-    background:#111;
-    color:white;
-    position:relative;
-    overflow:hidden;
+min-height:230px;
+padding:35px;
+background:#111;
+color:white;
+position:relative;
+overflow:hidden;
 }
 
 .banner h3{
-    color:#b8e600;
-    font-size:12px;
-    letter-spacing:2px;
-    margin-bottom:15px;
+color:#b8e600;
+font-size:12px;
+letter-spacing:2px;
+margin-bottom:15px;
 }
 
 .banner h2{
-    font-size:30px;
-    margin-bottom:12px;
+font-size:30px;
+margin-bottom:12px;
 }
 
 .banner p{
-    color:#bbb;
-    font-size:13px;
-    max-width:270px;
-    line-height:1.5;
+color:#bbb;
+font-size:13px;
+max-width:270px;
+line-height:1.5;
 }
 
 .banner img{
-    position:absolute;
-    right:-30px;
-    bottom:-20px;
-    width:280px;
-    height:200px;
-    object-fit:contain;
+position:absolute;
+right:-30px;
+bottom:-20px;
+width:280px;
+height:200px;
+object-fit:contain;
 }
 
 /* ================= FEATURES ================= */
 
 .features{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    border-top:1px solid #ddd;
-    border-bottom:1px solid #ddd;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+border-top:1px solid #ddd;
+border-bottom:1px solid #ddd;
 }
 
 .feature{
-    padding:25px;
-    text-align:center;
-    border-right:1px solid #ddd;
+padding:25px;
+text-align:center;
+border-right:1px solid #ddd;
 }
 
 .feature:last-child{
-    border-right:none;
+border-right:none;
 }
 
 .feature-icon{
-    font-size:25px;
-    margin-bottom:10px;
+font-size:25px;
+margin-bottom:10px;
 }
 
 .feature h4{
-    font-size:13px;
-    margin-bottom:5px;
+font-size:13px;
+margin-bottom:5px;
 }
 
 .feature p{
-    color:#777;
-    font-size:11px;
+color:#777;
+font-size:11px;
+}
+
+/* ================= ABOUT ================= */
+
+#about{
+background:#f7f7f7;
+padding:55px 5%;
+}
+
+.about-content{
+max-width:800px;
+margin:auto;
+text-align:center;
+}
+
+.about-content h2{
+font-size:28px;
+margin-bottom:15px;
+}
+
+.about-content p{
+color:#666;
+font-size:13px;
+line-height:1.8;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-    background:#111820;
-    color:white;
-    padding:50px 5% 25px;
+background:#111820;
+color:white;
+padding:50px 5% 25px;
 }
 
 .footer-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:40px;
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:40px;
 }
 
 .footer-logo{
-    font-size:27px;
-    font-weight:900;
-    margin-bottom:15px;
+font-size:27px;
+font-weight:900;
+margin-bottom:15px;
 }
 
 .footer-logo span{
-    color:#b8e600;
+color:#b8e600;
 }
 
 .footer-text{
-    color:#aaa;
-    font-size:12px;
-    line-height:1.7;
-    max-width:280px;
+color:#aaa;
+font-size:12px;
+line-height:1.7;
+max-width:280px;
 }
 
 footer h4{
-    margin-bottom:18px;
-    font-size:13px;
+margin-bottom:18px;
+font-size:13px;
 }
 
 footer ul{
-    list-style:none;
+list-style:none;
 }
 
 footer li{
-    margin-bottom:10px;
+margin-bottom:10px;
 }
 
 footer a{
-    color:#aaa;
-    text-decoration:none;
-    font-size:12px;
+color:#aaa;
+text-decoration:none;
+font-size:12px;
 }
 
 footer a:hover{
-    color:#b8e600;
+color:#b8e600;
+}
+
+.social-link{
+display:flex;
+align-items:center;
+gap:7px;
 }
 
 .copyright{
-    border-top:1px solid #29313a;
-    margin-top:40px;
-    padding-top:20px;
-    color:#777;
-    font-size:11px;
-    text-align:center;
-}
-
-.social-links{
-    margin-top:12px;
-    display:flex;
-    justify-content:center;
-    gap:20px;
-}
-
-.social-links a{
-    color:#aaa;
-    text-decoration:none;
-    font-size:12px;
-}
-
-.social-links a:hover{
-    color:#b8e600;
+border-top:1px solid #29313a;
+margin-top:40px;
+padding-top:20px;
+color:#777;
+font-size:11px;
+text-align:center;
 }
 
 /* ================= RESPONSIVE ================= */
 
 @media(max-width:1000px){
 
-    .brands{
-        grid-template-columns:repeat(3,1fr);
-    }
+.brands{
+grid-template-columns:repeat(3,1fr);
+}
 
-    .categories{
-        grid-template-columns:repeat(3,1fr);
-    }
+.categories{
+grid-template-columns:repeat(3,1fr);
+}
 
-    .products{
-        grid-template-columns:repeat(2,1fr);
-    }
+.products{
+grid-template-columns:repeat(2,1fr);
+}
 
 }
 
 @media(max-width:700px){
 
-    .navbar{
-        height:auto;
-        padding:15px 5%;
-        flex-wrap:wrap;
-        gap:15px;
-    }
+.navbar{
+height:auto;
+padding:15px 5%;
+flex-wrap:wrap;
+gap:15px;
+}
 
-    .nav-links{
-        order:3;
-        width:100%;
-        justify-content:center;
-        gap:18px;
-    }
+.nav-links{
+order:3;
+width:100%;
+justify-content:center;
+gap:18px;
+}
 
-    .nav-right{
-        margin-left:auto;
-    }
+.nav-right{
+margin-left:auto;
+}
 
-    .search{
-        display:none;
-    }
+.search{
+display:none;
+}
 
-    .hero{
-        min-height:500px;
-        padding:50px 7%;
-    }
+.hero{
+min-height:500px;
+padding:50px 7%;
+}
 
-    .hero h1{
-        font-size:52px;
-    }
+.hero h1{
+font-size:52px;
+}
 
-    .brands{
-        grid-template-columns:repeat(2,1fr);
-    }
+.brands{
+grid-template-columns:repeat(2,1fr);
+}
 
-    .categories{
-        grid-template-columns:repeat(2,1fr);
-    }
+.categories{
+grid-template-columns:repeat(2,1fr);
+}
 
-    .products{
-        grid-template-columns:1fr 1fr;
-    }
+.products{
+grid-template-columns:1fr 1fr;
+}
 
-    .product-image{
-        height:190px;
-    }
+.product-image{
+height:190px;
+}
 
-    .banners{
-        grid-template-columns:1fr;
-    }
+.banners{
+grid-template-columns:1fr;
+}
 
-    .features{
-        grid-template-columns:1fr 1fr;
-    }
+.features{
+grid-template-columns:1fr 1fr;
+}
 
-    .feature{
-        border-bottom:1px solid #ddd;
-    }
+.feature{
+border-bottom:1px solid #ddd;
+}
 
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-    }
+.footer-grid{
+grid-template-columns:1fr 1fr;
+}
 
 }
 
 @media(max-width:480px){
 
-    .nav-links{
-        gap:12px;
-    }
+.nav-links{
+gap:12px;
+}
 
-    .nav-links a{
-        font-size:11px;
-    }
+.nav-links a{
+font-size:11px;
+}
 
-    .hero h1{
-        font-size:45px;
-    }
+.hero h1{
+font-size:45px;
+}
 
-    .products{
-        grid-template-columns:1fr;
-    }
+.products{
+grid-template-columns:1fr;
+}
 
-    .product-image{
-        height:260px;
-    }
+.product-image{
+height:260px;
+}
 
-    .categories{
-        grid-template-columns:1fr 1fr;
-    }
+.categories{
+grid-template-columns:1fr 1fr;
+}
 
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
+.footer-grid{
+grid-template-columns:1fr;
+}
 
 }
 
@@ -637,54 +650,54 @@ footer a:hover{
 
 <nav class="navbar">
 
-    <a href="index.html" style="text-decoration:none;color:#111;">
-        <div class="logo">
-            SOLE<span>Vault</span>
-        </div>
-    </a>
+<a href="index.html" style="text-decoration:none;color:#111;">
+<div class="logo">
+SOLE<span>Vault</span>
+</div>
+</a>
 
-    <ul class="nav-links">
+<ul class="nav-links">
 
-        <li>
-            <a href="shop.html">MEN</a>
-        </li>
+<li>
+<a href="shop.html">MEN</a>
+</li>
 
-        <li>
-            <a href="./orders.html">MY ORDERS</a>
-        </li>
+<li>
+<a href="orders.html">MY ORDERS</a>
+</li>
 
-        <li>
-            <a href="shop.html">BRANDS</a>
-        </li>
+<li>
+<a href="shop.html">BRANDS</a>
+</li>
 
-        <li>
-            <a href="shop.html">SALE</a>
-        </li>
+<li>
+<a href="shop.html">SALE</a>
+</li>
 
-    </ul>
+</ul>
 
-    <div class="nav-right">
+<div class="nav-right">
 
-        <div class="search">
+<div class="search">
 
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search sneakers..."
-                onkeyup="searchProducts()"
-            >
+<input
+type="text"
+id="searchInput"
+placeholder="Search sneakers..."
+onkeyup="searchProducts()"
+>
 
-            🔍
+🔍
 
-        </div>
+</div>
 
-        <a href="#" class="icon">♡</a>
+<a href="#" class="icon">♡</a>
 
-        <a href="cart.html" class="icon">🛒</a>
+<a href="cart.html" class="icon">🛒</a>
 
-        <a href="#" class="icon">♙</a>
+<a href="#" class="icon">♙</a>
 
-    </div>
+</div>
 
 </nav>
 
@@ -693,37 +706,37 @@ footer a:hover{
 
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="hero-small">
-            PREMIUM SNEAKER COLLECTION
-        </div>
+<div class="hero-small">
+PREMIUM SNEAKER COLLECTION
+</div>
 
-        <h1>
-            OWN<br>
-            EVERY<br>
-            <span>STEP.</span>
-        </h1>
+<h1>
+OWN<br>
+EVERY<br>
+<span>STEP.</span>
+</h1>
 
-        <p>
-            Explore premium sneakers from the world's
-            biggest brands. Built for those who move
-            with style and confidence.
-        </p>
+<p>
+Explore premium sneakers from the world's
+biggest brands. Built for those who move
+with style and confidence.
+</p>
 
-        <div class="hero-buttons">
+<div class="hero-buttons">
 
-            <a href="shop.html" class="btn btn-green">
-                SHOP NOW →
-            </a>
+<a href="shop.html" class="btn btn-green">
+SHOP NOW →
+</a>
 
-            <a href="#brands" class="btn btn-outline">
-                EXPLORE BRANDS
-            </a>
+<a href="#brands" class="btn btn-outline">
+EXPLORE BRANDS
+</a>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -732,49 +745,49 @@ footer a:hover{
 
 <section class="section" id="brands">
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>TOP BRANDS</h2>
+<h2>TOP BRANDS</h2>
 
-        <a href="shop.html" class="view-all">
-            View All →
-        </a>
+<a href="shop.html" class="view-all">
+View All →
+</a>
 
-    </div>
+</div>
 
-    <div class="brands">
+<div class="brands">
 
-        <a href="shop.html" class="brand-box"
-           style="text-decoration:none;color:#111;">
-            NIKE
-        </a>
+<a href="shop.html" class="brand-box"
+style="text-decoration:none;color:#111;">
+NIKE
+</a>
 
-        <a href="shop.html" class="brand-box"
-           style="text-decoration:none;color:#111;">
-            adidas
-        </a>
+<a href="shop.html" class="brand-box"
+style="text-decoration:none;color:#111;">
+adidas
+</a>
 
-        <a href="shop.html" class="brand-box"
-           style="text-decoration:none;color:#111;">
-            PUMA
-        </a>
+<a href="shop.html" class="brand-box"
+style="text-decoration:none;color:#111;">
+PUMA
+</a>
 
-        <a href="shop.html" class="brand-box"
-           style="text-decoration:none;color:#111;">
-            NB
-        </a>
+<a href="shop.html" class="brand-box"
+style="text-decoration:none;color:#111;">
+NB
+</a>
 
-        <a href="shop.html" class="brand-box"
-           style="text-decoration:none;color:#111;">
-            CONVERSE
-        </a>
+<a href="shop.html" class="brand-box"
+style="text-decoration:none;color:#111;">
+CONVERSE
+</a>
 
-        <a href="shop.html" class="brand-box"
-           style="text-decoration:none;color:#111;">
-            ASICS
-        </a>
+<a href="shop.html" class="brand-box"
+style="text-decoration:none;color:#111;">
+ASICS
+</a>
 
-    </div>
+</div>
 
 </section>
 
@@ -783,63 +796,63 @@ footer a:hover{
 
 <section class="section">
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>SHOP BY CATEGORY</h2>
+<h2>SHOP BY CATEGORY</h2>
 
-    </div>
+</div>
 
-    <div class="categories">
+<div class="categories">
 
-        <a href="shop.html" class="category">
+<a href="shop.html" class="category">
 
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80">
 
-            <h3>Running</h3>
+<h3>Running</h3>
 
-        </a>
+</a>
 
-        <a href="shop.html" class="category">
+<a href="shop.html" class="category">
 
-            <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=500&q=80">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=500&q=80">
 
-            <h3>Lifestyle</h3>
+<h3>Lifestyle</h3>
 
-        </a>
+</a>
 
-        <a href="shop.html" class="category">
+<a href="shop.html" class="category">
 
-            <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=500&q=80">
+<img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=500&q=80">
 
-            <h3>Basketball</h3>
+<h3>Basketball</h3>
 
-        </a>
+</a>
 
-        <a href="shop.html" class="category">
+<a href="shop.html" class="category">
 
-            <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=500&q=80">
+<img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=500&q=80">
 
-            <h3>Training</h3>
+<h3>Training</h3>
 
-        </a>
+</a>
 
-        <a href="shop.html" class="category">
+<a href="shop.html" class="category">
 
-            <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=500&q=80">
+<img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=500&q=80">
 
-            <h3>Sneakers</h3>
+<h3>Sneakers</h3>
 
-        </a>
+</a>
 
-        <a href="shop.html" class="category">
+<a href="shop.html" class="category">
 
-            <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=500&q=80">
+<img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=500&q=80">
 
-            <h3>Streetwear</h3>
+<h3>Streetwear</h3>
 
-        </a>
+</a>
 
-    </div>
+</div>
 
 </section>
 
@@ -848,186 +861,187 @@ footer a:hover{
 
 <section class="section">
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>FEATURED PRODUCTS</h2>
+<h2>FEATURED PRODUCTS</h2>
 
-        <a href="shop.html" class="view-all">
-            VIEW ALL →
-        </a>
+<a href="shop.html" class="view-all">
+VIEW ALL →
+</a>
 
-    </div>
+</div>
 
-    <div class="products" id="products">
-
-        <!-- PRODUCT 1 -->
-
-        <div class="product">
-
-            <button class="wishlist">♡</button>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
-            >
-
-            <div class="product-info">
-
-                <div class="product-brand">
-                    NIKE
-                </div>
-
-                <div class="product-name">
-                    Air Max Street
-                </div>
-
-                <div class="product-price">
-                    ₹12,999
-                </div>
-
-                <button
-                    class="add-cart"
-                    onclick="addToCart(
-                        'Air Max Street',
-                        'NIKE',
-                        12999,
-                        this.parentElement.parentElement.querySelector('.product-image').src
-                    )"
-                >
-                    ADD TO CART
-                </button>
-
-            </div>
-
-        </div>
+<div class="products" id="products">
 
 
-        <!-- PRODUCT 2 -->
+<!-- PRODUCT 1 -->
 
-        <div class="product">
+<div class="product">
 
-            <button class="wishlist">♡</button>
+<button class="wishlist">♡</button>
 
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80"
-            >
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
+>
 
-            <div class="product-info">
+<div class="product-info">
 
-                <div class="product-brand">
-                    NIKE
-                </div>
+<div class="product-brand">
+NIKE
+</div>
 
-                <div class="product-name">
-                    Air Jordan Retro
-                </div>
+<div class="product-name">
+Air Max Street
+</div>
 
-                <div class="product-price">
-                    ₹14,999
-                </div>
+<div class="product-price">
+₹12,999
+</div>
 
-                <button
-                    class="add-cart"
-                    onclick="addToCart(
-                        'Air Jordan Retro',
-                        'NIKE',
-                        14999,
-                        this.parentElement.parentElement.querySelector('.product-image').src
-                    )"
-                >
-                    ADD TO CART
-                </button>
+<button
+class="add-cart"
+onclick="addToCart(
+'Air Max Street',
+'NIKE',
+12999,
+this.parentElement.parentElement.querySelector('.product-image').src
+)"
+>
+ADD TO CART
+</button>
 
-            </div>
+</div>
 
-        </div>
-
-
-        <!-- PRODUCT 3 -->
-
-        <div class="product">
-
-            <button class="wishlist">♡</button>
-
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=700&q=80"
-            >
-
-            <div class="product-info">
-
-                <div class="product-brand">
-                    ADIDAS
-                </div>
-
-                <div class="product-name">
-                    Campus 00s
-                </div>
-
-                <div class="product-price">
-                    ₹8,999
-                </div>
-
-                <button
-                    class="add-cart"
-                    onclick="addToCart(
-                        'Campus 00s',
-                        'ADIDAS',
-                        8999,
-                        this.parentElement.parentElement.querySelector('.product-image').src
-                    )"
-                >
-                    ADD TO CART
-                </button>
-
-            </div>
-
-        </div>
+</div>
 
 
-        <!-- PRODUCT 4 -->
+<!-- PRODUCT 2 -->
 
-        <div class="product">
+<div class="product">
 
-            <button class="wishlist">♡</button>
+<button class="wishlist">♡</button>
 
-            <img
-                class="product-image"
-                src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80"
-            >
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80"
+>
 
-            <div class="product-info">
+<div class="product-info">
 
-                <div class="product-brand">
-                    NEW BALANCE
-                </div>
+<div class="product-brand">
+NIKE
+</div>
 
-                <div class="product-name">
-                    550 Classic
-                </div>
+<div class="product-name">
+Air Jordan Retro
+</div>
 
-                <div class="product-price">
-                    ₹9,499
-                </div>
+<div class="product-price">
+₹14,999
+</div>
 
-                <button
-                    class="add-cart"
-                    onclick="addToCart(
-                        '550 Classic',
-                        'NEW BALANCE',
-                        9499,
-                        this.parentElement.parentElement.querySelector('.product-image').src
-                    )"
-                >
-                    ADD TO CART
-                </button>
+<button
+class="add-cart"
+onclick="addToCart(
+'Air Jordan Retro',
+'NIKE',
+14999,
+this.parentElement.parentElement.querySelector('.product-image').src
+)"
+>
+ADD TO CART
+</button>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+
+<!-- PRODUCT 3 -->
+
+<div class="product">
+
+<button class="wishlist">♡</button>
+
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=700&q=80"
+>
+
+<div class="product-info">
+
+<div class="product-brand">
+ADIDAS
+</div>
+
+<div class="product-name">
+Campus 00s
+</div>
+
+<div class="product-price">
+₹8,999
+</div>
+
+<button
+class="add-cart"
+onclick="addToCart(
+'Campus 00s',
+'ADIDAS',
+8999,
+this.parentElement.parentElement.querySelector('.product-image').src
+)"
+>
+ADD TO CART
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 4 -->
+
+<div class="product">
+
+<button class="wishlist">♡</button>
+
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80"
+>
+
+<div class="product-info">
+
+<div class="product-brand">
+NEW BALANCE
+</div>
+
+<div class="product-name">
+550 Classic
+</div>
+
+<div class="product-price">
+₹9,499
+</div>
+
+<button
+class="add-cart"
+onclick="addToCart(
+'550 Classic',
+'NEW BALANCE',
+9499,
+this.parentElement.parentElement.querySelector('.product-image').src
+)"
+>
+ADD TO CART
+</button>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1036,56 +1050,52 @@ footer a:hover{
 
 <section class="section">
 
-    <div class="banners">
+<div class="banners">
 
-        <div class="banner">
+<div class="banner">
 
-            <h3>NEW ARRIVALS</h3>
+<h3>NEW ARRIVALS</h3>
 
-            <h2>JUST DROPPED</h2>
+<h2>JUST DROPPED</h2>
 
-            <p>
-                Discover the latest sneaker releases
-                from premium brands.
-            </p>
+<p>
+Discover the latest sneaker releases
+from premium brands.
+</p>
 
-            <br>
+<br>
 
-            <a href="shop.html" class="btn btn-green">
-                SHOP NEW ARRIVALS →
-            </a>
+<a href="shop.html" class="btn btn-green">
+SHOP NEW ARRIVALS →
+</a>
 
-            <img
-                src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80"
-            >
+<img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80">
 
-        </div>
+</div>
 
 
-        <div class="banner">
+<div class="banner">
 
-            <h3>SUMMER SALE</h3>
+<h3>SUMMER SALE</h3>
 
-            <h2>UP TO 40% OFF</h2>
+<h2>UP TO 40% OFF</h2>
 
-            <p>
-                Limited time offers on selected
-                sneaker collections.
-            </p>
+<p>
+Limited time offers on selected
+sneaker collections.
+</p>
 
-            <br>
+<br>
 
-            <a href="shop.html" class="btn btn-green">
-                SHOP SALE →
-            </a>
+<a href="shop.html" class="btn btn-green">
+SHOP SALE →
+</a>
 
-            <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
-            >
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80">
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -1094,48 +1104,78 @@ footer a:hover{
 
 <section class="features">
 
-    <div class="feature">
+<div class="feature">
 
-        <div class="feature-icon">🚚</div>
+<div class="feature-icon">🚚</div>
 
-        <h4>FREE SHIPPING</h4>
+<h4>FREE SHIPPING</h4>
 
-        <p>On selected orders</p>
+<p>On selected orders</p>
 
-    </div>
-
-
-    <div class="feature">
-
-        <div class="feature-icon">↻</div>
-
-        <h4>30-DAY RETURNS</h4>
-
-        <p>Easy returns & exchanges</p>
-
-    </div>
+</div>
 
 
-    <div class="feature">
+<div class="feature">
 
-        <div class="feature-icon">✓</div>
+<div class="feature-icon">↻</div>
 
-        <h4>100% AUTHENTIC</h4>
+<h4>30-DAY RETURNS</h4>
 
-        <p>Genuine branded products</p>
+<p>Easy returns & exchanges</p>
 
-    </div>
+</div>
 
 
-    <div class="feature">
+<div class="feature">
 
-        <div class="feature-icon">🔒</div>
+<div class="feature-icon">✓</div>
 
-        <h4>SECURE PAYMENTS</h4>
+<h4>100% AUTHENTIC</h4>
 
-        <p>Safe & secure checkout</p>
+<p>Genuine branded products</p>
 
-    </div>
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">🔒</div>
+
+<h4>SECURE PAYMENTS</h4>
+
+<p>Safe & secure checkout</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" style="
+background:#f7f7f7;
+padding:55px 5%;
+text-align:center;
+">
+
+<h2 style="font-size:28px;margin-bottom:15px;">
+ABOUT SOLEVault
+</h2>
+
+<p style="
+max-width:750px;
+margin:auto;
+color:#666;
+font-size:13px;
+line-height:1.8;
+">
+
+SOLEVault is a premium sneaker destination built for
+people who want style, comfort and quality in every step.
+Explore collections from leading sneaker brands and
+discover your next favourite pair.
+
+</p>
 
 </section>
 
@@ -1144,164 +1184,100 @@ footer a:hover{
 
 <footer>
 
-    <div class="footer-grid">
+<div class="footer-grid">
 
-        <!-- BRAND -->
+<div>
 
-        <div>
+<div class="footer-logo">
+SOLE<span>Vault</span>
+</div>
 
-            <div class="footer-logo">
-                SOLE<span>Vault</span>
-            </div>
+<p class="footer-text">
+Your destination for premium sneakers.
+Quality, style and comfort — all in one place.
+</p>
 
-            <p class="footer-text">
-                Your destination for premium sneakers.
-                Quality, style and comfort — all in one place.
-            </p>
-
-        </div>
+</div>
 
 
-        <!-- SHOP -->
+<div>
 
-        <div>
+<h4>SHOP</h4>
 
-            <h4>SHOP</h4>
+<ul>
 
-            <ul>
+<li><a href="shop.html">Men</a></li>
 
-                <li>
-                    <a href="shop.html">Men</a>
-                </li>
+<li><a href="shop.html">Brands</a></li>
 
-                <li>
-                    <a href="shop.html">Brands</a>
-                </li>
+<li><a href="shop.html">Sale</a></li>
 
-                <li>
-                    <a href="shop.html">Sale</a>
-                </li>
+<li><a href="shop.html">New Arrivals</a></li>
 
-                <li>
-                    <a href="shop.html">New Arrivals</a>
-                </li>
+</ul>
 
-            </ul>
-
-        </div>
+</div>
 
 
-        <!-- CONTACT -->
+<div>
 
-        <div>
+<h4>CUSTOMER CARE</h4>
 
-            <h4>CONTACT</h4>
+<ul>
 
-            <ul>
+<li>
+<a href="https://wa.me/919061601136" target="_blank">
+📱 WhatsApp
+</a>
+</li>
 
-                <li>
-                    <a
-                        href="https://wa.me/919061601136"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        WhatsApp
-                    </a>
-                </li>
+<li>
+<a href="https://www.instagram.com/solevault.0" target="_blank">
+📸 Instagram
+</a>
+</li>
 
-                <li>
-                    <a
-                        href="https://www.instagram.com/solevault.0/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Instagram
-                    </a>
-                </li>
+<li>
+<a href="#">Shipping Info</a>
+</li>
 
-                <li>
-                    <a href="tel:+919061601136">
-                        9061601136
-                    </a>
-                </li>
+<li>
+<a href="#">Returns</a>
+</li>
 
-                <li>
-                    <a href="#">
-                        Contact Us
-                    </a>
-                </li>
+</ul>
 
-            </ul>
-
-        </div>
+</div>
 
 
-        <!-- COMPANY -->
+<div>
 
-        <div>
+<h4>COMPANY</h4>
 
-            <h4>COMPANY</h4>
+<ul>
 
-            <ul>
+<li>
+<a href="#about">
+About Us
+</a>
+</li>
 
-                <li>
-                    <a href="#">
-                        About Us
-                    </a>
-                </li>
+<li><a href="#">Privacy</a></li>
 
-                <li>
-                    <a href="#">
-                        Privacy
-                    </a>
-                </li>
+<li><a href="#">Terms</a></li>
 
-                <li>
-                    <a href="#">
-                        Terms
-                    </a>
-                </li>
+</ul>
 
-                <li>
-                    <a href="#">
-                        FAQ
-                    </a>
-                </li>
+</div>
 
-            </ul>
-
-        </div>
-
-    </div>
+</div>
 
 
-    <!-- COPYRIGHT -->
+<div class="copyright">
 
-    <div class="copyright">
+©️ 2026 SOLEVault — Premium Sneakers
 
-        ©️ 2026 SOLEVault — Premium Sneakers
-
-        <div class="social-links">
-
-            <a
-                href="https://wa.me/919061601136"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                WhatsApp
-            </a>
-
-            <a
-                href="https://www.instagram.com/solevault.0/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Instagram
-            </a>
-
-        </div>
-
-    </div>
+</div>
 
 </footer>
 
@@ -1314,28 +1290,28 @@ footer a:hover{
 
 function addToCart(name, brand, price, image){
 
-    const cartItem = {
+const cartItem = {
 
-        name: name,
+name: name,
 
-        brand: brand,
+brand: brand,
 
-        price: price,
+price: price,
 
-        image: image,
+image: image,
 
-        size: "9",
+size: "9",
 
-        quantity: 1
+quantity: 1
 
-    };
+};
 
-    localStorage.setItem(
-        "solevaultCart",
-        JSON.stringify(cartItem)
-    );
+localStorage.setItem(
+"solevaultCart",
+JSON.stringify(cartItem)
+);
 
-    window.location.href = "cart.html";
+window.location.href = "cart.html";
 
 }
 
@@ -1344,43 +1320,43 @@ function addToCart(name, brand, price, image){
 
 function searchProducts(){
 
-    const search =
-        document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase();
+const search =
+document
+.getElementById("searchInput")
+.value
+.toLowerCase();
 
-    const products =
-        document.querySelectorAll(".product");
+const products =
+document.querySelectorAll(".product");
 
-    products.forEach(product => {
+products.forEach(product => {
 
-        const name =
-            product
-            .querySelector(".product-name")
-            .innerText
-            .toLowerCase();
+const name =
+product
+.querySelector(".product-name")
+.innerText
+.toLowerCase();
 
-        const brand =
-            product
-            .querySelector(".product-brand")
-            .innerText
-            .toLowerCase();
+const brand =
+product
+.querySelector(".product-brand")
+.innerText
+.toLowerCase();
 
-        if(
-            name.includes(search) ||
-            brand.includes(search)
-        ){
+if(
+name.includes(search) ||
+brand.includes(search)
+){
 
-            product.style.display = "block";
+product.style.display = "block";
 
-        }else{
+}else{
 
-            product.style.display = "none";
+product.style.display = "none";
 
-        }
+}
 
-    });
+});
 
 }
 
@@ -1391,19 +1367,19 @@ document
 .querySelectorAll(".wishlist")
 .forEach(button => {
 
-    button.addEventListener("click", function(){
+button.addEventListener("click", function(){
 
-        if(this.innerText === "♡"){
+if(this.innerText === "♡"){
 
-            this.innerText = "♥️";
+this.innerText = "♥️";
 
-        }else{
+}else{
 
-            this.innerText = "♡";
+this.innerText = "♡";
 
-        }
+}
 
-    });
+});
 
 });
 
