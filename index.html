@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -494,6 +494,23 @@ footer a:hover{
     text-align:center;
 }
 
+.social-links{
+    margin-top:12px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.social-links a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:12px;
+}
+
+.social-links a:hover{
+    color:#b8e600;
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media(max-width:1000px){
@@ -616,7 +633,6 @@ footer a:hover{
 
 <body>
 
-
 <!-- ================= NAVBAR ================= -->
 
 <nav class="navbar">
@@ -632,8 +648,9 @@ footer a:hover{
         <li>
             <a href="shop.html">MEN</a>
         </li>
+
         <li>
-            <a href="./orders.html">my orders </a>
+            <a href="./orders.html">MY ORDERS</a>
         </li>
 
         <li>
@@ -649,13 +666,16 @@ footer a:hover{
     <div class="nav-right">
 
         <div class="search">
+
             <input
                 type="text"
                 id="searchInput"
                 placeholder="Search sneakers..."
                 onkeyup="searchProducts()"
             >
+
             🔍
+
         </div>
 
         <a href="#" class="icon">♡</a>
@@ -779,7 +799,6 @@ footer a:hover{
 
         </a>
 
-
         <a href="shop.html" class="category">
 
             <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=500&q=80">
@@ -787,7 +806,6 @@ footer a:hover{
             <h3>Lifestyle</h3>
 
         </a>
-
 
         <a href="shop.html" class="category">
 
@@ -797,7 +815,6 @@ footer a:hover{
 
         </a>
 
-
         <a href="shop.html" class="category">
 
             <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=500&q=80">
@@ -806,7 +823,6 @@ footer a:hover{
 
         </a>
 
-
         <a href="shop.html" class="category">
 
             <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=500&q=80">
@@ -814,7 +830,6 @@ footer a:hover{
             <h3>Sneakers</h3>
 
         </a>
-
 
         <a href="shop.html" class="category">
 
@@ -843,9 +858,7 @@ footer a:hover{
 
     </div>
 
-
     <div class="products" id="products">
-
 
         <!-- PRODUCT 1 -->
 
@@ -878,7 +891,7 @@ footer a:hover{
                         'Air Max Street',
                         'NIKE',
                         12999,
-                        this.previousElementSibling.previousElementSibling.previousElementSibling.src
+                        this.parentElement.parentElement.querySelector('.product-image').src
                     )"
                 >
                     ADD TO CART
@@ -1042,7 +1055,9 @@ footer a:hover{
                 SHOP NEW ARRIVALS →
             </a>
 
-            <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80">
+            <img
+                src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80"
+            >
 
         </div>
 
@@ -1064,7 +1079,9 @@ footer a:hover{
                 SHOP SALE →
             </a>
 
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80">
+            <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
+            >
 
         </div>
 
@@ -1129,6 +1146,8 @@ footer a:hover{
 
     <div class="footer-grid">
 
+        <!-- BRAND -->
+
         <div>
 
             <div class="footer-logo">
@@ -1143,43 +1162,81 @@ footer a:hover{
         </div>
 
 
+        <!-- SHOP -->
+
         <div>
 
             <h4>SHOP</h4>
 
             <ul>
 
-                <li><a href="shop.html">Men</a></li>
+                <li>
+                    <a href="shop.html">Men</a>
+                </li>
 
-                <li><a href="shop.html">Brands</a></li>
+                <li>
+                    <a href="shop.html">Brands</a>
+                </li>
 
-                <li><a href="shop.html">Sale</a></li>
+                <li>
+                    <a href="shop.html">Sale</a>
+                </li>
 
-                <li><a href="shop.html">New Arrivals</a></li>
+                <li>
+                    <a href="shop.html">New Arrivals</a>
+                </li>
 
             </ul>
 
         </div>
 
+
+        <!-- CONTACT -->
 
         <div>
 
-            <h4>CUSTOMER CARE</h4>
+            <h4>CONTACT</h4>
 
             <ul>
 
-                <li><a href="#">Contact Us</a></li>
+                <li>
+                    <a
+                        href="https://wa.me/919061601136"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        WhatsApp
+                    </a>
+                </li>
 
-                <li><a href="#">Shipping Info</a></li>
+                <li>
+                    <a
+                        href="https://www.instagram.com/solevault.0/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Instagram
+                    </a>
+                </li>
 
-                <li><a href="#">Returns</a></li>
+                <li>
+                    <a href="tel:+919061601136">
+                        9061601136
+                    </a>
+                </li>
 
-                <li><a href="#">FAQ</a></li>
+                <li>
+                    <a href="#">
+                        Contact Us
+                    </a>
+                </li>
 
             </ul>
 
         </div>
 
+
+        <!-- COMPANY -->
 
         <div>
 
@@ -1187,13 +1244,29 @@ footer a:hover{
 
             <ul>
 
-                <li><a href="#">About Us</a></li>
+                <li>
+                    <a href="#">
+                        About Us
+                    </a>
+                </li>
 
-                <li><a href="#">Careers</a></li>
+                <li>
+                    <a href="#">
+                        Privacy
+                    </a>
+                </li>
 
-                <li><a href="#">Privacy</a></li>
+                <li>
+                    <a href="#">
+                        Terms
+                    </a>
+                </li>
 
-                <li><a href="#">Terms</a></li>
+                <li>
+                    <a href="#">
+                        FAQ
+                    </a>
+                </li>
 
             </ul>
 
@@ -1202,9 +1275,31 @@ footer a:hover{
     </div>
 
 
+    <!-- COPYRIGHT -->
+
     <div class="copyright">
 
-        © 2026 SOLEVault — Premium Sneakers
+        ©️ 2026 SOLEVault — Premium Sneakers
+
+        <div class="social-links">
+
+            <a
+                href="https://wa.me/919061601136"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WhatsApp
+            </a>
+
+            <a
+                href="https://www.instagram.com/solevault.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Instagram
+            </a>
+
+        </div>
 
     </div>
 
@@ -1300,7 +1395,7 @@ document
 
         if(this.innerText === "♡"){
 
-            this.innerText = "♥";
+            this.innerText = "♥️";
 
         }else{
 
