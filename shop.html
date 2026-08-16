@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Shop | SOLEVault</title>
@@ -19,19 +16,23 @@
 }
 
 body{
-    background:#050505;
-    color:white;
+    background:#f5f5f0;
+    color:#111;
 }
 
 /* NAVBAR */
 
 nav{
-    height:75px;
+    height:78px;
     display:flex;
     align-items:center;
     justify-content:space-between;
     padding:0 6%;
-    border-bottom:1px solid #222;
+    background:#fff;
+    border-bottom:1px solid #ddd;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .logo{
@@ -51,91 +52,102 @@ nav ul{
 }
 
 nav a{
-    color:white;
+    color:#111;
     text-decoration:none;
     font-size:13px;
+    font-weight:bold;
     text-transform:uppercase;
 }
 
 nav a:hover{
-    color:#999;
+    color:#9cff00;
 }
 
 .icons{
     display:flex;
     gap:18px;
-    font-size:18px;
     align-items:center;
+    font-size:18px;
 }
 
 .cart-link{
-    color:white;
+    color:#111;
     text-decoration:none;
 }
 
 /* HEADER */
 
 .page-header{
-    padding:75px 7% 45px;
+    padding:75px 7% 50px;
     text-align:center;
-    animation:fadeDown 1s ease;
+    background:#f5f5f0;
 }
 
 .page-header p{
-    color:#888;
+    color:#777;
     letter-spacing:4px;
     font-size:12px;
     margin-bottom:15px;
+    font-weight:bold;
 }
 
 .page-header h1{
-    font-size:60px;
+    font-size:58px;
     letter-spacing:-3px;
+    font-weight:900;
 }
 
-/* FILTERS */
+/* FILTER AREA */
 
 .filters{
+    margin:0 6%;
+    padding:18px 22px;
+    background:#111;
+    border-radius:14px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 7%;
-    border-top:1px solid #222;
-    border-bottom:1px solid #222;
+    gap:20px;
 }
 
 .filter-buttons{
     display:flex;
-    gap:10px;
+    gap:9px;
     flex-wrap:wrap;
 }
 
 .filter-buttons button{
     background:transparent;
     color:white;
-    border:1px solid #333;
-    padding:10px 18px;
+    border:1px solid #444;
+    border-radius:30px;
+    padding:10px 17px;
     cursor:pointer;
-    transition:.3s;
+    font-size:12px;
+    font-weight:bold;
+    transition:.25s;
 }
 
 .filter-buttons button:hover,
 .filter-buttons button.active{
-    background:white;
-    color:black;
+    background:#9cff00;
+    color:#111;
+    border-color:#9cff00;
 }
 
 .sort select{
-    background:#111;
+    background:#222;
     color:white;
-    border:1px solid #333;
+    border:1px solid #444;
+    border-radius:25px;
     padding:10px 15px;
+    cursor:pointer;
 }
 
 /* PRODUCTS */
 
 .shop{
-    padding:60px 7%;
+    padding:55px 6%;
 }
 
 .product-grid{
@@ -145,41 +157,49 @@ nav a:hover{
 }
 
 .product{
-    background:#111;
-    position:relative;
+    background:#fff;
+    border-radius:16px;
     overflow:hidden;
-    animation:fadeUp .8s ease both;
-    transition:transform .35s ease;
+    position:relative;
+    border:1px solid #e1e1dc;
+    transition:.3s ease;
 }
 
 .product:hover{
-    transform:translateY(-8px);
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px rgba(0,0,0,.10);
 }
 
 .product-image{
     width:100%;
-    height:290px;
+    height:285px;
     object-fit:cover;
-    transition:transform .5s ease;
+    display:block;
     background:#eee;
+    transition:.5s ease;
 }
 
 .product:hover .product-image{
-    transform:scale(1.07);
+    transform:scale(1.04);
 }
 
 .wishlist{
     position:absolute;
     top:15px;
     right:15px;
-    width:38px;
-    height:38px;
+    width:40px;
+    height:40px;
     border:none;
     border-radius:50%;
-    cursor:pointer;
     background:white;
-    font-size:17px;
+    cursor:pointer;
+    font-size:18px;
     z-index:2;
+    box-shadow:0 3px 12px rgba(0,0,0,.12);
+}
+
+.wishlist:hover{
+    background:#9cff00;
 }
 
 .product-info{
@@ -187,82 +207,55 @@ nav a:hover{
 }
 
 .brand{
-    color:#777;
+    color:#888;
     font-size:11px;
     letter-spacing:2px;
+    font-weight:bold;
     margin-bottom:8px;
 }
 
 .product-info h3{
-    font-size:16px;
+    font-size:17px;
     margin-bottom:10px;
 }
 
 .price{
-    font-size:15px;
-    margin-bottom:15px;
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:16px;
 }
 
 .add-cart{
     width:100%;
     padding:13px;
-    background:white;
-    color:black;
+    background:#111;
+    color:white;
     border:none;
+    border-radius:8px;
     font-weight:bold;
     cursor:pointer;
-    transition:.3s;
+    transition:.25s;
 }
 
 .add-cart:hover{
-    background:#ccc;
-    transform:translateY(-2px);
+    background:#9cff00;
+    color:#111;
 }
 
 /* FOOTER */
 
 footer{
-    border-top:1px solid #222;
-    padding:40px 7%;
     margin-top:50px;
-    color:#666;
-    font-size:12px;
+    background:#111;
+    color:#777;
     text-align:center;
-}
-
-/* ANIMATIONS */
-
-@keyframes fadeDown{
-
-    from{
-        opacity:0;
-        transform:translateY(-25px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
+    padding:40px 7%;
+    font-size:12px;
 }
 
 /* RESPONSIVE */
 
-@media(max-width:1000px){
+@media(max-width:1050px){
 
     .product-grid{
         grid-template-columns:repeat(3,1fr);
@@ -270,7 +263,7 @@ footer{
 
 }
 
-@media(max-width:750px){
+@media(max-width:800px){
 
     nav ul{
         display:none;
@@ -278,7 +271,6 @@ footer{
 
     .filters{
         flex-direction:column;
-        gap:20px;
         align-items:flex-start;
     }
 
@@ -288,21 +280,25 @@ footer{
 
 }
 
-@media(max-width:500px){
+@media(max-width:520px){
 
     .page-header h1{
-        font-size:42px;
+        font-size:40px;
     }
 
     .product-grid{
         grid-template-columns:1fr;
     }
 
+    .shop{
+        padding:40px 5%;
+    }
+
 }
 
 </style>
-
 </head>
+
 
 <body>
 
@@ -324,7 +320,7 @@ footer{
 
         <li><a href="shop.html">New Drops</a></li>
 
-        <li><a href="shop.html">Best Sellers</a></li>
+        <li><a href="shop.html">Sale</a></li>
 
     </ul>
 
@@ -340,6 +336,7 @@ footer{
 
 </nav>
 
+
 <!-- HEADER -->
 
 <section class="page-header">
@@ -350,33 +347,46 @@ footer{
 
 </section>
 
+
 <!-- FILTERS -->
 
 <section class="filters">
 
     <div class="filter-buttons">
 
-        <button class="active" onclick="filterProducts('ALL',this)">
+        <button
+            class="active"
+            onclick="filterProducts('ALL',this)">
             ALL
         </button>
 
-        <button onclick="filterProducts('NIKE',this)">
+        <button
+            onclick="filterProducts('NIKE',this)">
             NIKE
         </button>
 
-        <button onclick="filterProducts('ADIDAS',this)">
+        <button
+            onclick="filterProducts('ADIDAS',this)">
             ADIDAS
         </button>
 
-        <button onclick="filterProducts('PUMA',this)">
+        <button
+            onclick="filterProducts('PUMA',this)">
             PUMA
         </button>
 
-        <button onclick="filterProducts('NEW BALANCE',this)">
+        <button
+            onclick="filterProducts('NEW BALANCE',this)">
             NEW BALANCE
         </button>
 
-        <button onclick="filterProducts('ASICS',this)">
+        <button
+            onclick="filterProducts('CONVERSE',this)">
+            CONVERSE
+        </button>
+
+        <button
+            onclick="filterProducts('ASICS',this)">
             ASICS
         </button>
 
@@ -404,11 +414,13 @@ footer{
 
 </section>
 
+
 <!-- PRODUCTS -->
 
 <section class="shop">
 
 <div class="product-grid" id="productGrid">
+
 
 <!-- PRODUCT 1 -->
 
@@ -429,11 +441,13 @@ alt="Nike Sneaker">
 
 <div class="price">₹12,999</div>
 
-<button class="add-cart">ADD TO CART</button>
+<button class="add-cart">
+ADD TO CART
+</button>
 
 </div>
-
 </div>
+
 
 <!-- PRODUCT 2 -->
 
@@ -454,11 +468,13 @@ alt="Jordan Sneaker">
 
 <div class="price">₹14,999</div>
 
-<button class="add-cart">ADD TO CART</button>
+<button class="add-cart">
+ADD TO CART
+</button>
 
 </div>
-
 </div>
+
 
 <!-- PRODUCT 3 -->
 
@@ -479,11 +495,13 @@ alt="Adidas Sneaker">
 
 <div class="price">₹8,999</div>
 
-<button class="add-cart">ADD TO CART</button>
+<button class="add-cart">
+ADD TO CART
+</button>
 
 </div>
-
 </div>
+
 
 <!-- PRODUCT 4 -->
 
@@ -504,11 +522,13 @@ alt="New Balance Sneaker">
 
 <div class="price">₹9,499</div>
 
-<button class="add-cart">ADD TO CART</button>
+<button class="add-cart">
+ADD TO CART
+</button>
 
 </div>
-
 </div>
+
 
 <!-- PRODUCT 5 -->
 
@@ -529,11 +549,13 @@ alt="Puma Sneaker">
 
 <div class="price">₹10,499</div>
 
-<button class="add-cart">ADD TO CART</button>
+<button class="add-cart">
+ADD TO CART
+</button>
 
 </div>
-
 </div>
+
 
 <!-- PRODUCT 6 -->
 
@@ -554,11 +576,13 @@ alt="Converse Sneaker">
 
 <div class="price">₹7,499</div>
 
-<button class="add-cart">ADD TO CART</button>
+<button class="add-cart">
+ADD TO CART
+</button>
 
 </div>
-
 </div>
+
 
 <!-- PRODUCT 7 -->
 
@@ -579,11 +603,13 @@ alt="ASICS Sneaker">
 
 <div class="price">₹11,999</div>
 
-<button class="add-cart">ADD TO CART</button>
+<button class="add-cart">
+ADD TO CART
+</button>
 
 </div>
-
 </div>
+
 
 <!-- PRODUCT 8 -->
 
@@ -604,23 +630,27 @@ alt="Nike Dunk">
 
 <div class="price">₹13,499</div>
 
-<button class="add-cart">ADD TO CART</button>
+<button class="add-cart">
+ADD TO CART
+</button>
 
 </div>
-
 </div>
+
 
 </div>
 
 </section>
 
+
 <!-- FOOTER -->
 
 <footer>
 
-©️ 2026 SOLEVault — Premium Sneakers
+© 2026 SOLEVault — Premium Sneakers
 
 </footer>
+
 
 <script>
 
@@ -756,10 +786,10 @@ buttons.forEach(button => {
             "✓ ADDED TO CART";
 
         this.style.background =
-            "#222";
+            "#9cff00";
 
         this.style.color =
-            "white";
+            "#111";
 
         setTimeout(() => {
 
@@ -775,5 +805,4 @@ buttons.forEach(button => {
 </script>
 
 </body>
-
 </html>
