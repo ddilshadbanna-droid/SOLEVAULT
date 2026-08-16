@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Cart | SOLEVault</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -15,18 +18,23 @@
 }
 
 body{
-    background:#050505;
-    color:white;
+    background:#f5f5f0;
+    color:#111;
 }
 
 /* NAVBAR */
+
 nav{
-    height:75px;
+    height:78px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 7%;
-    border-bottom:1px solid #222;
+    padding:0 6%;
+    background:#fff;
+    border-bottom:1px solid #ddd;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .logo{
@@ -46,72 +54,79 @@ nav ul{
 }
 
 nav a{
-    color:white;
+    color:#111;
     text-decoration:none;
     font-size:13px;
+    font-weight:bold;
     text-transform:uppercase;
 }
 
 nav a:hover{
-    color:#888;
+    color:#8ee600;
 }
 
 .icons{
-    font-size:18px;
+    font-size:19px;
 }
 
 /* HEADER */
+
 .cart-header{
     text-align:center;
-    padding:65px 7% 40px;
-    animation:fadeDown .8s ease;
+    padding:70px 7% 45px;
 }
 
 .cart-header p{
     color:#777;
     letter-spacing:4px;
     font-size:12px;
+    font-weight:bold;
     margin-bottom:15px;
 }
 
 .cart-header h1{
-    font-size:55px;
+    font-size:58px;
     letter-spacing:-3px;
+    font-weight:900;
 }
 
 /* CART AREA */
+
 .cart-container{
     display:grid;
     grid-template-columns:2fr 1fr;
-    gap:50px;
-    padding:30px 7% 80px;
+    gap:35px;
+    padding:20px 6% 80px;
 }
 
 /* ITEMS */
+
 .cart-items{
-    border-top:1px solid #222;
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:16px;
+    padding:0 25px;
 }
 
 .cart-item{
     display:grid;
-    grid-template-columns:130px 1fr auto;
+    grid-template-columns:150px 1fr auto;
     gap:25px;
     align-items:center;
     padding:25px 0;
-    border-bottom:1px solid #222;
-    animation:fadeUp .7s ease;
 }
 
 .cart-item img{
-    width:130px;
-    height:130px;
+    width:150px;
+    height:150px;
     object-fit:cover;
+    border-radius:12px;
     background:#eee;
 }
 
 .item-info h2{
-    font-size:18px;
-    margin-bottom:8px;
+    font-size:20px;
+    margin-bottom:9px;
 }
 
 .item-info p{
@@ -121,62 +136,76 @@ nav a:hover{
 }
 
 .item-price{
-    font-weight:bold;
+    font-weight:900;
+    font-size:17px;
 }
 
 /* QUANTITY */
+
 .quantity{
     display:flex;
     align-items:center;
     gap:12px;
-    margin-top:15px;
+    margin-top:17px;
 }
 
 .quantity button{
-    width:30px;
-    height:30px;
+    width:32px;
+    height:32px;
     background:#111;
     color:white;
-    border:1px solid #333;
+    border:none;
+    border-radius:6px;
     cursor:pointer;
+    font-size:18px;
+}
+
+.quantity button:hover{
+    background:#9cff00;
+    color:#111;
 }
 
 .quantity span{
     min-width:20px;
     text-align:center;
+    font-weight:bold;
 }
 
 /* REMOVE */
+
 .remove{
-    color:#777;
+    color:#888;
     background:none;
     border:none;
     cursor:pointer;
-    margin-top:15px;
+    margin-top:14px;
+    font-size:12px;
 }
 
 .remove:hover{
-    color:white;
+    color:#111;
 }
 
 /* SUMMARY */
+
 .summary{
     background:#111;
+    color:white;
+    border-radius:16px;
     padding:30px;
     height:max-content;
-    animation:slideRight .8s ease;
 }
 
 .summary h2{
-    margin-bottom:30px;
-    font-size:24px;
+    font-size:23px;
+    margin-bottom:25px;
 }
 
 .summary-row{
     display:flex;
     justify-content:space-between;
-    padding:15px 0;
-    border-bottom:1px solid #222;
+    padding:16px 0;
+    border-bottom:1px solid #292929;
     color:#aaa;
 }
 
@@ -187,22 +216,27 @@ nav a:hover{
     border-bottom:none;
 }
 
+/* CHECKOUT */
+
 .checkout{
     width:100%;
-    padding:17px;
-    background:white;
-    color:black;
+    padding:16px;
+    margin-top:18px;
+    background:#9cff00;
+    color:#111;
     border:none;
-    font-weight:bold;
+    border-radius:8px;
+    font-weight:900;
     cursor:pointer;
-    margin-top:20px;
-    transition:.3s;
+    transition:.25s;
 }
 
 .checkout:hover{
-    background:#ccc;
-    transform:translateY(-3px);
+    background:#b4ff45;
+    transform:translateY(-2px);
 }
+
+/* CONTINUE */
 
 .continue{
     display:block;
@@ -217,42 +251,19 @@ nav a:hover{
     color:white;
 }
 
-/* ANIMATIONS */
-@keyframes fadeDown{
-    from{
-        opacity:0;
-        transform:translateY(-25px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
+/* FOOTER */
 
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(25px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes slideRight{
-    from{
-        opacity:0;
-        transform:translateX(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateX(0);
-    }
+footer{
+    background:#111;
+    color:#777;
+    text-align:center;
+    padding:40px 7%;
+    font-size:12px;
 }
 
 /* MOBILE */
-@media(max-width:800px){
+
+@media(max-width:850px){
 
     nav ul{
         display:none;
@@ -262,8 +273,21 @@ nav a:hover{
         grid-template-columns:1fr;
     }
 
+}
+
+@media(max-width:600px){
+
+    .cart-header h1{
+        font-size:40px;
+    }
+
+    .cart-container{
+        padding:20px 5% 60px;
+    }
+
     .cart-item{
         grid-template-columns:90px 1fr;
+        gap:15px;
     }
 
     .cart-item img{
@@ -275,16 +299,22 @@ nav a:hover{
         grid-column:2;
     }
 
-    .cart-header h1{
-        font-size:42px;
+    .cart-items{
+        padding:0 15px;
     }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <!-- NAVBAR -->
+
 <nav>
 
     <div class="logo">
@@ -292,18 +322,48 @@ nav a:hover{
     </div>
 
     <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="product.html">Product</a></li>
-        <li><a href="#">New Drops</a></li>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="shop.html">
+                Shop
+            </a>
+        </li>
+
+        <li>
+            <a href="shop.html">
+                Brands
+            </a>
+        </li>
+
+        <li>
+            <a href="shop.html">
+                New Drops
+            </a>
+        </li>
+
+        <li>
+            <a href="shop.html">
+                Sale
+            </a>
+        </li>
+
     </ul>
 
-    <div class="icons">🛒</div>
+    <div class="icons">
+        🛒
+    </div>
 
 </nav>
 
 
 <!-- HEADER -->
+
 <section class="cart-header">
 
     <p>YOUR SELECTION</p>
@@ -314,9 +374,12 @@ nav a:hover{
 
 
 <!-- CART -->
+
 <section class="cart-container">
 
+
     <!-- ITEMS -->
+
     <div class="cart-items">
 
         <div class="cart-item">
@@ -325,32 +388,54 @@ nav a:hover{
             src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80"
             alt="Sneaker">
 
+
             <div class="item-info">
 
-                <h2>Air Max Street</h2>
+                <h2>
+                    Air Max Street
+                </h2>
 
-                <p>Brand: Nike</p>
+                <p>
+                    Brand: Nike
+                </p>
 
-                <p>Size: 9</p>
+                <p>
+                    Size: 9
+                </p>
+
 
                 <div class="quantity">
 
-                    <button onclick="decrease()">−</button>
+                    <button onclick="decrease()">
+                        −
+                    </button>
 
-                    <span id="qty">1</span>
+                    <span id="qty">
+                        1
+                    </span>
 
-                    <button onclick="increase()">+</button>
+                    <button onclick="increase()">
+                        +
+                    </button>
 
                 </div>
 
-                <button class="remove" onclick="removeItem()">
+
+                <button
+                    class="remove"
+                    onclick="removeItem()">
+
                     Remove
+
                 </button>
 
             </div>
 
+
             <div class="item-price">
+
                 ₹12,999
+
             </div>
 
         </div>
@@ -359,31 +444,68 @@ nav a:hover{
 
 
     <!-- SUMMARY -->
+
     <div class="summary">
 
-        <h2>ORDER SUMMARY</h2>
+        <h2>
+            ORDER SUMMARY
+        </h2>
+
 
         <div class="summary-row">
-            <span>Subtotal</span>
-            <span id="subtotal">₹12,999</span>
+
+            <span>
+                Subtotal
+            </span>
+
+            <span id="subtotal">
+                ₹12,999
+            </span>
+
         </div>
 
+
         <div class="summary-row">
-            <span>Delivery</span>
-            <span>FREE</span>
+
+            <span>
+                Delivery
+            </span>
+
+            <span>
+                FREE
+            </span>
+
         </div>
+
 
         <div class="summary-row total">
-            <span>Total</span>
-            <span id="total">₹12,999</span>
+
+            <span>
+                Total
+            </span>
+
+            <span id="total">
+                ₹12,999
+            </span>
+
         </div>
 
-        <button class="checkout" onclick="goCheckout()">
+
+        <button
+            class="checkout"
+            onclick="goCheckout()">
+
             PROCEED TO CHECKOUT →
+
         </button>
 
-        <a href="shop.html" class="continue">
+
+        <a
+            href="shop.html"
+            class="continue">
+
             ← Continue Shopping
+
         </a>
 
     </div>
@@ -391,13 +513,28 @@ nav a:hover{
 </section>
 
 
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 SOLEVault — Premium Sneakers
+
+</footer>
+
+
 <script>
 
+/* LOAD CART */
+
 const savedCart =
-    JSON.parse(localStorage.getItem("solevaultCart"));
+    JSON.parse(
+        localStorage.getItem("solevaultCart")
+    );
+
 
 const cartItem =
     document.querySelector(".cart-item");
+
 
 if(savedCart){
 
@@ -411,7 +548,8 @@ if(savedCart){
         "Brand: " + savedCart.brand;
 
     cartItem.querySelector(".item-price").innerText =
-        "₹" + savedCart.price.toLocaleString("en-IN");
+        "₹" +
+        savedCart.price.toLocaleString("en-IN");
 
 }else{
 
@@ -423,31 +561,43 @@ if(savedCart){
 let quantity =
     savedCart ? savedCart.quantity : 0;
 
+
 const price =
     savedCart ? savedCart.price : 0;
 
 
+/* UPDATE TOTAL */
+
 function updateTotal(){
 
-    const total = price * quantity;
+    const total =
+        price * quantity;
+
 
     document.getElementById("qty").innerText =
         quantity;
 
+
     document.getElementById("subtotal").innerText =
-        "₹" + total.toLocaleString("en-IN");
+        "₹" +
+        total.toLocaleString("en-IN");
+
 
     document.getElementById("total").innerText =
-        "₹" + total.toLocaleString("en-IN");
+        "₹" +
+        total.toLocaleString("en-IN");
 
 }
 
+
+/* INCREASE */
 
 function increase(){
 
     quantity++;
 
-    savedCart.quantity = quantity;
+    savedCart.quantity =
+        quantity;
 
     localStorage.setItem(
         "solevaultCart",
@@ -459,13 +609,16 @@ function increase(){
 }
 
 
+/* DECREASE */
+
 function decrease(){
 
     if(quantity > 1){
 
         quantity--;
 
-        savedCart.quantity = quantity;
+        savedCart.quantity =
+            quantity;
 
         localStorage.setItem(
             "solevaultCart",
@@ -479,11 +632,16 @@ function decrease(){
 }
 
 
+/* REMOVE */
+
 function removeItem(){
 
-    localStorage.removeItem("solevaultCart");
+    localStorage.removeItem(
+        "solevaultCart"
+    );
 
-    cartItem.style.display = "none";
+    cartItem.style.display =
+        "none";
 
     document.getElementById("subtotal").innerText =
         "₹0";
@@ -491,18 +649,28 @@ function removeItem(){
     document.getElementById("total").innerText =
         "₹0";
 
+    quantity = 0;
+
 }
 
 
+/* CHECKOUT */
+
 function goCheckout(){
 
-    if(!savedCart || quantity === 0){
+    if(
+        !savedCart ||
+        quantity === 0
+    ){
 
-        alert("Your cart is empty.");
+        alert(
+            "Your cart is empty."
+        );
 
         return;
 
     }
+
 
     window.location.href =
         "checkout.html";
@@ -513,5 +681,8 @@ function goCheckout(){
 updateTotal();
 
 </script>
+
+
 </body>
+
 </html>
