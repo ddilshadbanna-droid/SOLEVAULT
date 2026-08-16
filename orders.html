@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>My Orders | SOLEVault</title>
 
-    
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -19,6 +25,8 @@ body{
     background:#050505;
     color:white;
 }
+
+/* NAVBAR */
 
 nav{
     height:75px;
@@ -39,20 +47,22 @@ nav{
     font-weight:400;
 }
 
-nav a{
-    color:white;
+.back{
+    color:#aaa;
     text-decoration:none;
     font-size:13px;
-    text-transform:uppercase;
 }
 
-nav a:hover{
-    color:#999;
+.back:hover{
+    color:white;
 }
+
+
+/* HEADER */
 
 .header{
     text-align:center;
-    padding:65px 7% 45px;
+    padding:55px 7% 35px;
 }
 
 .header p{
@@ -63,115 +73,113 @@ nav a:hover{
 }
 
 .header h1{
-    font-size:55px;
-    letter-spacing:-3px;
+    font-size:48px;
 }
 
-.orders-container{
+
+/* CONTAINER */
+
+.container{
     width:86%;
-    max-width:1100px;
+    max-width:900px;
     margin:auto;
-    padding-bottom:80px;
+    padding-bottom:70px;
 }
+
+
+/* ORDER CARD */
 
 .order-card{
     background:#111;
     border:1px solid #222;
     padding:25px;
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
+
+
+/* TOP */
 
 .order-top{
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    gap:20px;
+    gap:15px;
     padding-bottom:18px;
     border-bottom:1px solid #222;
 }
 
 .order-id{
-    font-size:13px;
-    color:#aaa;
+    font-weight:bold;
+    margin-bottom:6px;
 }
 
-.order-status{
-    color:#55c878;
+.order-date{
+    color:#666;
+    font-size:11px;
+}
+
+.status{
+    color:#b8e600;
     font-size:13px;
     font-weight:bold;
 }
 
-.order-content{
-    display:grid;
-    grid-template-columns:120px 1fr auto;
-    gap:25px;
-    align-items:center;
-    padding-top:25px;
+
+/* PRODUCT */
+
+.product{
+    display:flex;
+    gap:20px;
+    padding:20px 0;
 }
 
-.order-image{
-    width:120px;
-    height:120px;
+.product img{
+    width:100px;
+    height:100px;
     object-fit:cover;
-    background:#eee;
+    background:#050505;
 }
 
-.product-name{
-    font-size:20px;
-    margin-bottom:10px;
-}
-
-.product-info{
-    color:#777;
-    font-size:13px;
-    line-height:1.8;
-}
-
-.order-price{
-    text-align:right;
-}
-
-.order-price small{
-    display:block;
-    color:#777;
-    font-size:11px;
+.product-info h2{
+    font-size:18px;
     margin-bottom:8px;
 }
 
-.order-price strong{
-    font-size:20px;
+.product-info p{
+    color:#888;
+    font-size:13px;
+    margin:6px 0;
 }
 
-.details{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-    margin-top:25px;
-    padding-top:20px;
+
+/* BOTTOM */
+
+.bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     border-top:1px solid #222;
-}
-
-.detail-box{
-    background:#050505;
-    border:1px solid #222;
-    padding:15px;
-}
-
-.detail-box small{
-    display:block;
-    color:#666;
-    font-size:10px;
-    letter-spacing:1px;
-    margin-bottom:7px;
-}
-
-.detail-box span{
+    padding-top:18px;
+    color:#aaa;
     font-size:13px;
 }
 
+.payment-paid{
+    color:#b8e600;
+    font-weight:bold;
+}
+
+.amount{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+}
+
+
+/* EMPTY */
+
 .empty{
     text-align:center;
-    padding:70px 20px;
+    padding:60px 20px;
     background:#111;
     border:1px solid #222;
 }
@@ -189,7 +197,7 @@ nav a:hover{
     display:inline-block;
     padding:14px 25px;
     background:white;
-    color:black;
+    color:#050505;
     text-decoration:none;
     font-weight:bold;
 }
@@ -198,44 +206,52 @@ nav a:hover{
     background:#ccc;
 }
 
-@media(max-width:700px){
 
-    nav ul{
-        display:none;
-    }
+/* ERROR */
+
+.error{
+    color:#ff6b6b;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
 
     .header h1{
-        font-size:42px;
+        font-size:38px;
     }
 
-    .order-content{
-        grid-template-columns:90px 1fr;
-        gap:15px;
-    }
-
-    .order-image{
-        width:90px;
-        height:90px;
-    }
-
-    .order-price{
-        grid-column:2;
-        text-align:left;
-    }
-
-    .details{
-        grid-template-columns:1fr;
+    .container{
+        width:92%;
     }
 
     .order-top{
-        align-items:flex-start;
         flex-direction:column;
     }
+
+    .product img{
+        width:80px;
+        height:80px;
+    }
+
+    .bottom{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+    }
+
 }
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- NAVBAR -->
 
 <nav>
 
@@ -243,261 +259,391 @@ nav a:hover{
         SOLE<span>Vault</span>
     </div>
 
-    <div>
-        <a href="index.html">Home</a>
-        &nbsp;&nbsp;
-        <a href="shop.html">Shop</a>
-    </div>
+    <a
+        href="index.html"
+        class="back"
+    >
+        ← Back to Home
+    </a>
 
 </nav>
 
 
+<!-- HEADER -->
+
 <section class="header">
 
-    <p>YOUR SOLEVAULT ACCOUNT</p>
+    <p>YOUR PURCHASE HISTORY</p>
 
-    <h1>ORDERS</h1>
+    <h1>MY ORDERS</h1>
 
 </section>
 
 
-<div class="orders-container" id="ordersContainer">
+<!-- ORDERS -->
+
+<div
+    class="container"
+    id="ordersContainer"
+>
+
+    <div class="empty">
+
+        <h2>
+            Loading Orders...
+        </h2>
+
+        <p>
+            Please wait.
+        </p>
+
+    </div>
+
 </div>
 
 
 <script>
 
-function loadOrders(){
+
+// ==========================================
+// LOAD ALL ORDERS
+// ==========================================
+
+async function loadOrders(){
 
     const container =
-        document.getElementById("ordersContainer");
-
-
-    /*
-       Get latest order details
-       saved during checkout/payment
-    */
-
-    const cart =
-        JSON.parse(
-            localStorage.getItem("solevaultCart")
+        document.getElementById(
+            "ordersContainer"
         );
 
 
-    const customer =
-        JSON.parse(
-            localStorage.getItem("solevaultCustomer")
+    try{
+
+        const response =
+            await fetch(
+                "/api/orders"
+            );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "Server error"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        // No orders
+
+        if(
+            !data.success ||
+            !data.orders ||
+            data.orders.length === 0
+        ){
+
+            container.innerHTML = `
+
+                <div class="empty">
+
+                    <h2>
+                        No Orders Yet
+                    </h2>
+
+                    <p>
+                        You haven't placed any
+                        orders yet.
+                    </p>
+
+                    <a
+                        href="shop.html"
+                        class="shop-btn"
+                    >
+                        START SHOPPING →
+                    </a>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        // Clear loading
+
+        container.innerHTML = "";
+
+
+        // Show orders
+
+        data.orders
+            .slice()
+            .reverse()
+            .forEach(order => {
+
+
+                const product =
+                    order.product || {};
+
+
+                const image =
+                    product.image || "";
+
+
+                const name =
+                    product.name ||
+                    "Sneaker";
+
+
+                const brand =
+                    product.brand ||
+                    "-";
+
+
+                const quantity =
+                    order.quantity ||
+                    1;
+
+
+                const size =
+                    order.size ||
+                    "-";
+
+
+                const amount =
+                    Number(
+                        order.amount || 0
+                    )
+                    .toLocaleString(
+                        "en-IN"
+                    );
+
+
+                const paymentStatus =
+                    order.paymentStatus ||
+                    "Pending";
+
+
+                const orderStatus =
+                    order.orderStatus ||
+                    "Order Created";
+
+
+                const date =
+                    order.createdAt
+                    ?
+                    new Date(
+                        order.createdAt
+                    )
+                    .toLocaleString(
+                        "en-IN"
+                    )
+                    :
+                    "-";
+
+
+                const card =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                card.className =
+                    "order-card";
+
+
+                card.innerHTML = `
+
+                    <div class="order-top">
+
+                        <div>
+
+                            <div class="order-id">
+
+                                ORDER #${order.orderId}
+
+                            </div>
+
+                            <div class="order-date">
+
+                                ${date}
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="status">
+
+                            ${orderStatus}
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product">
+
+                        ${
+                            image
+                            ?
+                            `
+                            <img
+                                src="${image}"
+                                alt="${name}"
+                            >
+                            `
+                            :
+                            `
+                            <div
+                                style="
+                                width:100px;
+                                height:100px;
+                                background:#050505;
+                                display:flex;
+                                align-items:center;
+                                justify-content:center;
+                                color:#666;
+                                "
+                            >
+                                NO IMAGE
+                            </div>
+                            `
+                        }
+
+
+                        <div class="product-info">
+
+                            <h2>
+                                ${name}
+                            </h2>
+
+                            <p>
+                                Brand:
+                                ${brand}
+                            </p>
+
+                            <p>
+                                Size:
+                                ${size}
+                            </p>
+
+                            <p>
+                                Quantity:
+                                ${quantity}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bottom">
+
+                        <div>
+
+                            Payment:
+
+                            <span
+                                class="
+                                ${
+                                    paymentStatus === "Paid"
+                                    ?
+                                    "payment-paid"
+                                    :
+                                    ""
+                                }
+                                "
+                            >
+
+                                ${paymentStatus}
+
+                            </span>
+
+                            <br>
+
+                            <span
+                                style="
+                                color:#777;
+                                margin-top:5px;
+                                display:inline-block;
+                                "
+                            >
+
+                                ${orderStatus}
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="amount">
+
+                            ₹${amount}
+
+                        </div>
+
+                    </div>
+
+                `;
+
+
+                container.appendChild(
+                    card
+                );
+
+            });
+
+
+    }catch(error){
+
+        console.error(
+            error
         );
 
-
-    const orderId =
-        localStorage.getItem("solevaultOrderId");
-
-
-    const amount =
-        Number(
-            localStorage.getItem(
-                "solevaultOrderAmount"
-            )
-        ) || 0;
-
-
-    const paymentMethod =
-        localStorage.getItem(
-            "solevaultPaymentMethod"
-        ) || "UPI";
-
-
-    const orderStatus =
-        localStorage.getItem(
-            "solevaultOrderStatus"
-        ) || "Order Placed";
-
-
-    const paymentStatus =
-        localStorage.getItem(
-            "solevaultPaymentStatus"
-        ) || "Paid";
-
-
-    /* NO ORDER */
-
-    if(!orderId || !cart){
 
         container.innerHTML = `
 
             <div class="empty">
 
-                <h2>NO ORDERS YET</h2>
+                <h2 class="error">
+                    Unable to Load Orders
+                </h2>
 
                 <p>
-                    You haven't placed any orders yet.
+                    Please make sure your
+                    SOLEVault server is running.
                 </p>
 
                 <a
-                    href="shop.html"
-                    class="shop-btn">
-
-                    START SHOPPING →
-
+                    href="index.html"
+                    class="shop-btn"
+                >
+                    BACK TO HOME
                 </a>
 
             </div>
 
         `;
 
-        return;
-
     }
-
-
-    /* ORDER DATE */
-
-    let orderDate =
-        localStorage.getItem(
-            "solevaultOrderDate"
-        );
-
-
-    if(!orderDate){
-
-        orderDate =
-            new Date().toLocaleDateString(
-                "en-IN"
-            );
-
-        localStorage.setItem(
-            "solevaultOrderDate",
-            orderDate
-        );
-
-    }
-
-
-    /* CREATE ORDER CARD */
-
-    container.innerHTML = `
-
-        <div class="order-card">
-
-            <div class="order-top">
-
-                <div>
-
-                    <div class="order-id">
-                        ORDER ID:
-                        <strong>#${orderId}</strong>
-                    </div>
-
-                    <div
-                        class="order-id"
-                        style="margin-top:6px;">
-
-                        ORDER DATE:
-                        ${orderDate}
-
-                    </div>
-
-                </div>
-
-                <div class="order-status">
-                    ✓ ${orderStatus}
-                </div>
-
-            </div>
-
-
-            <div class="order-content">
-
-                <img
-                    class="order-image"
-                    src="${cart.image}"
-                    alt="${cart.name}">
-
-
-                <div>
-
-                    <h2 class="product-name">
-                        ${cart.name}
-                    </h2>
-
-                    <div class="product-info">
-
-                        Brand:
-                        ${cart.brand}
-                        <br>
-
-                        Size:
-                        ${cart.size || "9"}
-                        <br>
-
-                        Quantity:
-                        ${cart.quantity || 1}
-
-                    </div>
-
-                </div>
-
-
-                <div class="order-price">
-
-                    <small>TOTAL AMOUNT</small>
-
-                    <strong>
-                        ₹${amount.toLocaleString("en-IN")}
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <div class="details">
-
-                <div class="detail-box">
-
-                    <small>PAYMENT</small>
-
-                    <span>
-                        ${paymentStatus} ✓
-                    </span>
-
-                </div>
-
-
-                <div class="detail-box">
-
-                    <small>PAYMENT METHOD</small>
-
-                    <span>
-                        ${paymentMethod}
-                    </span>
-
-                </div>
-
-
-                <div class="detail-box">
-
-                    <small>ORDER STATUS</small>
-
-                    <span>
-                        ${orderStatus}
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    `;
 
 }
 
+
+// START
 
 loadOrders();
 
 </script>
 
+
 </body>
+
 </html>
