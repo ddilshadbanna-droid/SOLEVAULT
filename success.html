@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Payment Successful - SOLEVAULT</title>
+<title>Order Confirmed | SOLEVault</title>
 
 <style>
 
@@ -13,7 +14,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
@@ -26,6 +27,8 @@ body{
     padding:20px;
 }
 
+/* SUCCESS BOX */
+
 .success-box{
     background:#111;
     width:90%;
@@ -33,23 +36,31 @@ body{
     padding:40px 25px;
     text-align:center;
     border:1px solid #222;
-    box-shadow:0 8px 30px rgba(0,0,0,0.4);
+    box-shadow:0 8px 30px rgba(0,0,0,.4);
     animation:fadeIn .7s ease;
 }
+
+/* CHECK */
 
 .check{
     width:80px;
     height:80px;
     margin:0 auto 20px;
+
     border-radius:50%;
+
     background:white;
     color:#050505;
+
     font-size:45px;
+    font-weight:bold;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    font-weight:bold;
 }
+
+/* TITLE */
 
 h1{
     font-size:28px;
@@ -61,6 +72,8 @@ h1{
     margin-bottom:25px;
     line-height:1.6;
 }
+
+/* ORDER DETAILS */
 
 .order-details{
     background:#050505;
@@ -74,7 +87,9 @@ h1{
     display:flex;
     justify-content:space-between;
     gap:15px;
+
     margin:13px 0;
+
     color:#aaa;
 }
 
@@ -88,15 +103,22 @@ h1{
     color:#55c878 !important;
 }
 
+/* BUTTONS */
+
 .btn{
     display:block;
     width:100%;
+
     padding:14px;
+
     background:white;
     color:#050505;
+
     text-decoration:none;
     font-weight:bold;
+
     margin-top:10px;
+
     transition:.3s;
 }
 
@@ -104,6 +126,20 @@ h1{
     background:#ccc;
     transform:translateY(-2px);
 }
+
+/* TRACK */
+
+.track{
+    background:#050505;
+    color:white;
+    border:1px solid #444;
+}
+
+.track:hover{
+    background:#222;
+}
+
+/* HOME */
 
 .home{
     background:#111;
@@ -115,11 +151,7 @@ h1{
     background:#222;
 }
 
-.track{
-    background:#050505;
-    color:white;
-    border:1px solid #444;
-}
+/* ANIMATION */
 
 @keyframes fadeIn{
 
@@ -135,35 +167,69 @@ h1{
 
 }
 
+/* MOBILE */
+
+@media(max-width:500px){
+
+    .success-box{
+        padding:35px 18px;
+    }
+
+    h1{
+        font-size:24px;
+    }
+
+    .row{
+        font-size:13px;
+    }
+
+}
+
 </style>
 
 </head>
 
+
 <body>
 
+
 <div class="success-box">
+
+
+    <!-- SUCCESS ICON -->
 
     <div class="check">
         ✓
     </div>
 
+
+    <!-- TITLE -->
+
     <h1>
-        Payment Successful!
+        Order Confirmed!
     </h1>
+
 
     <p class="message">
 
-        Thank you for shopping with SOLEVAULT.
-        Your order has been confirmed.
+        Thank you for shopping with SOLEVault.
+        Your order has been successfully placed.
 
     </p>
 
 
+    <!-- ORDER DETAILS -->
+
     <div class="order-details">
+
+
+        <!-- ORDER ID -->
 
         <div class="row">
 
-            <span>Order ID</span>
+            <span>
+                Order ID
+            </span>
 
             <span id="orderId">
                 Loading...
@@ -172,9 +238,13 @@ h1{
         </div>
 
 
+        <!-- PAYMENT -->
+
         <div class="row">
 
-            <span>Payment</span>
+            <span>
+                Payment
+            </span>
 
             <span class="status">
                 Paid ✓
@@ -183,20 +253,28 @@ h1{
         </div>
 
 
+        <!-- PAYMENT METHOD -->
+
         <div class="row">
 
-            <span>Payment Method</span>
+            <span>
+                Payment Method
+            </span>
 
             <span id="paymentMethod">
-                UPI
+                Loading...
             </span>
 
         </div>
 
 
+        <!-- TOTAL -->
+
         <div class="row">
 
-            <span>Total Amount</span>
+            <span>
+                Total Amount
+            </span>
 
             <span id="totalAmount">
                 Loading...
@@ -205,32 +283,56 @@ h1{
         </div>
 
 
+        <!-- STATUS -->
+
         <div class="row">
 
-            <span>Order Status</span>
+            <span>
+                Order Status
+            </span>
 
             <span class="status">
-                Confirmed
+                Confirmed ✓
             </span>
 
         </div>
 
+
     </div>
 
 
-    <a href="tracking.html" class="btn track">
+    <!-- TRACK ORDER -->
+
+    <a
+        href="tracking.html"
+        class="btn track">
+
         TRACK ORDER →
+
     </a>
 
 
-    <a href="index.html" class="btn">
+    <!-- CONTINUE SHOPPING -->
+
+    <a
+        href="shop.html"
+        class="btn">
+
         CONTINUE SHOPPING
+
     </a>
 
 
-    <a href="index.html" class="btn home">
+    <!-- HOME -->
+
+    <a
+        href="index.html"
+        class="btn home">
+
         BACK TO HOME
+
     </a>
+
 
 </div>
 
@@ -238,58 +340,120 @@ h1{
 <script>
 
 
-/* GET ORDER DETAILS */
+/* =========================
+   GET ORDER DATA
+========================= */
+
 
 const orderId =
-    localStorage.getItem("solevaultOrderId");
+    localStorage.getItem(
+        "solevaultOrderId"
+    );
+
 
 const amount =
-    localStorage.getItem("solevaultOrderAmount");
+    localStorage.getItem(
+        "solevaultOrderAmount"
+    );
+
 
 const paymentStatus =
-    localStorage.getItem("solevaultPaymentStatus");
+    localStorage.getItem(
+        "solevaultPaymentStatus"
+    );
 
 
-/* ORDER ID */
+const paymentMethod =
+    localStorage.getItem(
+        "solevaultPaymentMethod"
+    );
+
+
+/* =========================
+   ORDER ID
+========================= */
+
 
 if(orderId){
 
-    document.getElementById("orderId").textContent =
+    document.getElementById(
+        "orderId"
+    ).textContent =
         "#" + orderId;
 
 }else{
 
-    document.getElementById("orderId").textContent =
+    document.getElementById(
+        "orderId"
+    ).textContent =
         "Not available";
 
 }
 
 
-/* AMOUNT */
+/* =========================
+   TOTAL AMOUNT
+========================= */
+
 
 if(amount){
 
-    document.getElementById("totalAmount").textContent =
-        "₹" + Number(amount).toLocaleString("en-IN");
+    document.getElementById(
+        "totalAmount"
+    ).textContent =
+        "₹" +
+        Number(amount)
+        .toLocaleString("en-IN");
 
 }else{
 
-    document.getElementById("totalAmount").textContent =
+    document.getElementById(
+        "totalAmount"
+    ).textContent =
         "Amount unavailable";
 
 }
 
 
-/* PAYMENT STATUS */
+/* =========================
+   PAYMENT METHOD
+========================= */
+
+
+if(paymentMethod){
+
+    document.getElementById(
+        "paymentMethod"
+    ).textContent =
+        paymentMethod;
+
+}else{
+
+    document.getElementById(
+        "paymentMethod"
+    ).textContent =
+        "Not available";
+
+}
+
+
+/* =========================
+   PAYMENT STATUS
+========================= */
+
 
 if(paymentStatus === "Paid"){
 
-    console.log("Payment confirmed");
+    console.log(
+        "Payment confirmed"
+    );
 
 }
 
 
 </script>
 
+
 </body>
+
 </html>
