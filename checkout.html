@@ -7,6 +7,7 @@
 <title>Checkout | SOLEVault</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -16,8 +17,10 @@
 
 body{
     background:#050505;
-    color:white;
+    color:#fff;
 }
+
+/* NAVBAR */
 
 nav{
     height:75px;
@@ -39,43 +42,60 @@ nav{
 }
 
 nav a{
-    color:white;
+    color:#fff;
     text-decoration:none;
     font-size:13px;
+    text-transform:uppercase;
 }
+
+nav a:hover{
+    color:#aaa;
+}
+
+/* HEADER */
 
 .header{
     text-align:center;
-    padding:55px 7% 35px;
+    padding:65px 7% 40px;
 }
 
 .header p{
     color:#777;
-    font-size:12px;
+    font-size:11px;
     letter-spacing:4px;
     margin-bottom:15px;
 }
 
 .header h1{
-    font-size:52px;
+    font-size:55px;
+    letter-spacing:-3px;
 }
+
+/* MAIN */
 
 .checkout-container{
     display:grid;
     grid-template-columns:1.5fr 1fr;
-    gap:45px;
+    gap:40px;
     padding:30px 7% 80px;
 }
+
+/* BOX */
 
 .form-box,
 .summary{
     background:#111;
+    border:1px solid #222;
     padding:30px;
 }
 
+/* FORM */
+
 .form-box h2,
 .summary h2{
-    margin-bottom:25px;
+    font-size:22px;
+    margin-bottom:28px;
+    letter-spacing:1px;
 }
 
 .row{
@@ -90,8 +110,9 @@ nav a{
 
 .field label{
     display:block;
-    font-size:12px;
-    color:#aaa;
+    color:#888;
+    font-size:11px;
+    letter-spacing:1px;
     margin-bottom:8px;
 }
 
@@ -101,9 +122,21 @@ nav a{
     width:100%;
     padding:14px;
     background:#050505;
-    color:white;
+    color:#fff;
     border:1px solid #333;
     outline:none;
+    border-radius:0;
+}
+
+.field input::placeholder,
+.field textarea::placeholder{
+    color:#555;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+    border-color:#fff;
 }
 
 .field textarea{
@@ -111,91 +144,111 @@ nav a{
     resize:none;
 }
 
-.field input:focus,
-.field select:focus,
-.field textarea:focus{
-    border-color:white;
-}
+/* ORDER */
 
 .order-item{
     display:flex;
-    gap:15px;
-    padding-bottom:20px;
+    gap:18px;
+    padding-bottom:22px;
     border-bottom:1px solid #222;
 }
 
 .order-item img{
-    width:85px;
-    height:85px;
+    width:95px;
+    height:95px;
     object-fit:cover;
+    background:#eee;
 }
 
 .order-item h3{
-    font-size:15px;
-    margin-bottom:8px;
+    font-size:16px;
+    margin-bottom:9px;
 }
 
 .order-item p{
     color:#777;
-    font-size:13px;
-    margin-bottom:5px;
+    font-size:12px;
+    margin-bottom:6px;
 }
+
+/* PRICE */
 
 .price-row{
     display:flex;
     justify-content:space-between;
-    padding:14px 0;
-    color:#aaa;
+    padding:15px 0;
+    color:#888;
     border-bottom:1px solid #222;
 }
 
-.total{
-    color:white;
+.price-row.total{
+    color:#fff;
     font-size:20px;
     font-weight:bold;
-    border:0;
+    border-bottom:none;
 }
+
+/* BUTTON */
 
 .payment-btn{
     width:100%;
     padding:17px;
-    background:white;
-    color:black;
-    border:0;
+    margin-top:20px;
+    background:#fff;
+    color:#000;
+    border:none;
     font-weight:bold;
     cursor:pointer;
-    margin-top:20px;
+    letter-spacing:.5px;
+    transition:.3s;
 }
 
 .payment-btn:hover{
     background:#ccc;
+    transform:translateY(-2px);
 }
 
 .secure{
     text-align:center;
-    color:#666;
+    color:#555;
     font-size:11px;
     margin-top:20px;
 }
 
+/* MOBILE */
+
 @media(max-width:800px){
+
+    nav ul{
+        display:none;
+    }
 
     .checkout-container{
         grid-template-columns:1fr;
+        padding:20px 5% 60px;
     }
 
     .row{
         grid-template-columns:1fr;
     }
 
-    .header h1{
-        font-size:40px;
+    .header{
+        padding:50px 5% 30px;
     }
+
+    .header h1{
+        font-size:42px;
+    }
+
 }
+
 </style>
 </head>
 
+
 <body>
+
+<!-- NAVBAR -->
 
 <nav>
 
@@ -203,9 +256,14 @@ nav a{
         SOLE<span>Vault</span>
     </div>
 
-    <a href="cart.html">← Back to Cart</a>
+    <a href="cart.html">
+        ← BACK TO CART
+    </a>
 
 </nav>
+
+
+<!-- HEADER -->
 
 <section class="header">
 
@@ -215,168 +273,319 @@ nav a{
 
 </section>
 
+
+<!-- CHECKOUT -->
+
 <section class="checkout-container">
 
-    <div class="form-box">
 
-        <h2>DELIVERY DETAILS</h2>
+<!-- DELIVERY FORM -->
 
-        <div class="row">
+<div class="form-box">
 
-            <div class="field">
-                <label>FIRST NAME</label>
-                <input type="text" id="firstName" placeholder="First name">
-            </div>
+    <h2>DELIVERY DETAILS</h2>
 
-            <div class="field">
-                <label>LAST NAME</label>
-                <input type="text" id="lastName" placeholder="Last name">
-            </div>
 
-        </div>
-
-        <div class="field">
-            <label>EMAIL ADDRESS</label>
-            <input type="email" id="email" placeholder="you@example.com">
-        </div>
-
-        <div class="field">
-            <label>PHONE NUMBER</label>
-            <input type="tel" id="phone" placeholder="10 digit mobile number" maxlength="10">
-        </div>
-
-        <div class="field">
-            <label>ADDRESS</label>
-            <textarea id="address" placeholder="House / Flat / Street / Area"></textarea>
-        </div>
-
-        <div class="row">
-
-            <div class="field">
-                <label>CITY</label>
-                <input type="text" id="city" placeholder="City">
-            </div>
-
-            <div class="field">
-                <label>PIN CODE</label>
-                <input type="text" id="pincode" placeholder="6 digit PIN" maxlength="6">
-            </div>
-
-        </div>
+    <div class="row">
 
         <div class="field">
 
-            <label>STATE</label>
+            <label>FIRST NAME</label>
 
-            <select id="state">
-
-                <option value="">Select State</option>
-                <option>Kerala</option>
-                <option>Tamil Nadu</option>
-                <option>Karnataka</option>
-                <option>Maharashtra</option>
-                <option>Delhi</option>
-                <option>Telangana</option>
-                <option>Andhra Pradesh</option>
-                <option>Other</option>
-
-            </select>
+            <input
+                type="text"
+                id="firstName"
+                placeholder="First name"
+            >
 
         </div>
 
+
         <div class="field">
 
-            <label>DELIVERY METHOD</label>
+            <label>LAST NAME</label>
 
-            <select id="deliveryMethod">
-
-                <option value="0">Standard Delivery — FREE</option>
-                <option value="149">Express Delivery — ₹149</option>
-
-            </select>
+            <input
+                type="text"
+                id="lastName"
+                placeholder="Last name"
+            >
 
         </div>
 
     </div>
 
 
-    <div class="summary">
+    <div class="field">
 
-        <h2>YOUR ORDER</h2>
+        <label>EMAIL ADDRESS</label>
 
-        <div class="order-item">
+        <input
+            type="email"
+            id="email"
+            placeholder="you@example.com"
+        >
 
-            <img
-            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80"
-            alt="Air Max Street">
+    </div>
 
-            <div>
 
-                <h3>Air Max Street</h3>
+    <div class="field">
 
-                <p>Brand: Nike</p>
+        <label>PHONE NUMBER</label>
 
-                <p>Size: 9 × <span id="quantity">1</span></p>
+        <input
+            type="tel"
+            id="phone"
+            placeholder="10 digit mobile number"
+            maxlength="10"
+        >
 
-                <p>₹12,999 each</p>
+    </div>
 
-            </div>
+
+    <div class="field">
+
+        <label>ADDRESS</label>
+
+        <textarea
+            id="address"
+            placeholder="House / Flat / Street / Area"
+        ></textarea>
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="field">
+
+            <label>CITY</label>
+
+            <input
+                type="text"
+                id="city"
+                placeholder="City"
+            >
 
         </div>
 
-        <div class="price-row">
 
-            <span>Subtotal</span>
-            <span id="subtotal">₹12,999</span>
+        <div class="field">
 
-        </div>
+            <label>PIN CODE</label>
 
-        <div class="price-row">
-
-            <span>Delivery</span>
-            <span id="deliveryPrice">FREE</span>
-
-        </div>
-
-        <div class="price-row total">
-
-            <span>Total</span>
-            <span id="totalPrice">₹12,999</span>
+            <input
+                type="text"
+                id="pincode"
+                placeholder="6 digit PIN"
+                maxlength="6"
+            >
 
         </div>
 
-        <button
+    </div>
+
+
+    <div class="field">
+
+        <label>STATE</label>
+
+        <select id="state">
+
+            <option value="">
+                Select State
+            </option>
+
+            <option>Kerala</option>
+            <option>Tamil Nadu</option>
+            <option>Karnataka</option>
+            <option>Maharashtra</option>
+            <option>Delhi</option>
+            <option>Telangana</option>
+            <option>Andhra Pradesh</option>
+            <option>Other</option>
+
+        </select>
+
+    </div>
+
+
+    <div class="field">
+
+        <label>DELIVERY METHOD</label>
+
+        <select id="deliveryMethod">
+
+            <option value="0">
+                Standard Delivery — FREE
+            </option>
+
+            <option value="149">
+                Express Delivery — ₹149
+            </option>
+
+        </select>
+
+    </div>
+
+</div>
+
+
+<!-- ORDER SUMMARY -->
+
+<div class="summary">
+
+    <h2>YOUR ORDER</h2>
+
+
+    <div class="order-item">
+
+        <img
+            id="orderImage"
+            src=""
+            alt="Product"
+        >
+
+
+        <div>
+
+            <h3 id="orderName">
+                Product
+            </h3>
+
+            <p>
+                Brand:
+                <span id="orderBrand"></span>
+            </p>
+
+            <p>
+                Size:
+                <span id="orderSize">9</span>
+            </p>
+
+            <p>
+                Quantity:
+                <span id="quantity">1</span>
+            </p>
+
+            <p id="eachPrice">
+                ₹0 each
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="price-row">
+
+        <span>Subtotal</span>
+
+        <span id="subtotal">
+            ₹0
+        </span>
+
+    </div>
+
+
+    <div class="price-row">
+
+        <span>Delivery</span>
+
+        <span id="deliveryPrice">
+            FREE
+        </span>
+
+    </div>
+
+
+    <div class="price-row total">
+
+        <span>Total</span>
+
+        <span id="totalPrice">
+            ₹0
+        </span>
+
+    </div>
+
+
+    <button
         class="payment-btn"
-        onclick="continuePayment()">
+        onclick="continuePayment()"
+    >
+        CONTINUE TO PAYMENT →
+    </button>
 
-            CONTINUE TO PAYMENT →
 
-        </button>
-
-        <div class="secure">
-            🔒 Your information is securely protected
-        </div>
-
+    <div class="secure">
+        🔒 Your information is securely protected
     </div>
+
+</div>
 
 </section>
 
 
 <script>
 
-const price = 12999;
+/* GET CART */
+
+const savedCart =
+    JSON.parse(
+        localStorage.getItem("solevaultCart")
+    );
+
+
+/* IF CART EMPTY */
+
+if(!savedCart){
+
+    alert("Your cart is empty.");
+
+    window.location.href =
+        "shop.html";
+
+}
+
+
+/* PRODUCT DETAILS */
+
+const price =
+    Number(savedCart.price) || 0;
 
 let quantity =
-    Number(localStorage.getItem("solevaultQuantity")) || 1;
+    Number(savedCart.quantity) || 1;
 
-document.getElementById("quantity").textContent =
+
+/* SHOW PRODUCT */
+
+document.getElementById("orderImage").src =
+    savedCart.image;
+
+document.getElementById("orderName").innerText =
+    savedCart.name;
+
+document.getElementById("orderBrand").innerText =
+    savedCart.brand;
+
+document.getElementById("quantity").innerText =
     quantity;
 
+document.getElementById("eachPrice").innerText =
+    "₹" + price.toLocaleString("en-IN") + " each";
+
+
+/* TOTAL */
 
 function updateTotal(){
 
     const delivery =
-        Number(document.getElementById("deliveryMethod").value);
+        Number(
+            document.getElementById(
+                "deliveryMethod"
+            ).value
+        );
 
     const subtotal =
         price * quantity;
@@ -384,55 +593,85 @@ function updateTotal(){
     const total =
         subtotal + delivery;
 
-    document.getElementById("subtotal").textContent =
+
+    document.getElementById("subtotal").innerText =
         "₹" + subtotal.toLocaleString("en-IN");
 
-    document.getElementById("deliveryPrice").textContent =
+
+    document.getElementById("deliveryPrice").innerText =
         delivery === 0
         ? "FREE"
         : "₹" + delivery.toLocaleString("en-IN");
 
-    document.getElementById("totalPrice").textContent =
+
+    document.getElementById("totalPrice").innerText =
         "₹" + total.toLocaleString("en-IN");
+
 
     localStorage.setItem(
         "solevaultOrderAmount",
         total
     );
+
 }
 
 
+/* DELIVERY CHANGE */
+
 document
 .getElementById("deliveryMethod")
-.addEventListener("change", updateTotal);
+.addEventListener(
+    "change",
+    updateTotal
+);
 
+
+/* CONTINUE TO PAYMENT */
 
 function continuePayment(){
 
     const firstName =
-        document.getElementById("firstName").value.trim();
+        document.getElementById(
+            "firstName"
+        ).value.trim();
 
     const lastName =
-        document.getElementById("lastName").value.trim();
+        document.getElementById(
+            "lastName"
+        ).value.trim();
 
     const email =
-        document.getElementById("email").value.trim();
+        document.getElementById(
+            "email"
+        ).value.trim();
 
     const phone =
-        document.getElementById("phone").value.trim();
+        document.getElementById(
+            "phone"
+        ).value.trim();
 
     const address =
-        document.getElementById("address").value.trim();
+        document.getElementById(
+            "address"
+        ).value.trim();
 
     const city =
-        document.getElementById("city").value.trim();
+        document.getElementById(
+            "city"
+        ).value.trim();
 
     const pincode =
-        document.getElementById("pincode").value.trim();
+        document.getElementById(
+            "pincode"
+        ).value.trim();
 
     const state =
-        document.getElementById("state").value;
+        document.getElementById(
+            "state"
+        ).value;
 
+
+    /* REQUIRED */
 
     if(
         !firstName ||
@@ -445,57 +684,110 @@ function continuePayment(){
         !state
     ){
 
-        alert("Please fill in all delivery details.");
+        alert(
+            "Please fill in all delivery details."
+        );
+
         return;
 
     }
 
+
+    /* PHONE */
 
     if(!/^\d{10}$/.test(phone)){
 
-        alert("Please enter a valid 10-digit phone number.");
+        alert(
+            "Please enter a valid 10-digit phone number."
+        );
+
         return;
 
     }
 
+
+    /* PIN */
 
     if(!/^\d{6}$/.test(pincode)){
 
-        alert("Please enter a valid 6-digit PIN code.");
+        alert(
+            "Please enter a valid 6-digit PIN code."
+        );
+
         return;
 
     }
 
 
+    /* DELIVERY */
+
     const delivery =
-        Number(document.getElementById("deliveryMethod").value);
+        Number(
+            document.getElementById(
+                "deliveryMethod"
+            ).value
+        );
+
 
     const total =
         (price * quantity) + delivery;
 
 
+    /* CUSTOMER DATA */
+
     const customerDetails = {
 
         firstName:firstName,
+
         lastName:lastName,
+
         email:email,
+
         phone:phone,
 
         address:address,
+
         city:city,
+
         pincode:pincode,
+
         state:state,
 
-        quantity:quantity,
-        amount:total
+        deliveryMethod:
+            delivery === 0
+            ? "Standard Delivery"
+            : "Express Delivery",
+
+        productName:
+            savedCart.name,
+
+        brand:
+            savedCart.brand,
+
+        size:
+            savedCart.size || "9",
+
+        quantity:
+            quantity,
+
+        price:
+            price,
+
+        amount:
+            total
 
     };
 
 
+    /* SAVE */
+
     localStorage.setItem(
         "solevaultCustomer",
-        JSON.stringify(customerDetails)
+        JSON.stringify(
+            customerDetails
+        )
     );
+
 
     localStorage.setItem(
         "solevaultOrderAmount",
@@ -503,10 +795,15 @@ function continuePayment(){
     );
 
 
-    window.location.href = "payment.html";
+    /* PAYMENT */
+
+    window.location.href =
+        "payment.html";
 
 }
 
+
+/* INITIAL */
 
 updateTotal();
 
